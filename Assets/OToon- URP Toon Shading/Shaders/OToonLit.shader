@@ -34,6 +34,7 @@ Shader "URP/OToonLit"
         
         _DitherTexelSize ("[Surface]Dither Size", Range(1, 20)) = 1
         _DitherThreshold ("[Surface]Dither Threshold", Range(0, 1)) = 1
+
         _SpecularSize ("[ToonSpec]Specular Size", Range(0.0, 1.0)) = 1.0
         _SpecularFalloff ("[ToonSpec]Specular Falloff", Range(0.0, 1.0)) = 1.0
         _SpecularClipMask ("[ToonSpec][SinglelineTexture]Specular Clip Map", 2D) = "clip map" { }
@@ -321,7 +322,7 @@ Shader "URP/OToonLit"
             #pragma target 2.0
 
             #pragma vertex UniversalVertexMeta
-            #pragma fragment UniversalFragmentMeta
+            #pragma fragment UniversalFragmentMetaLit
 
             #pragma shader_feature_local_fragment _SPECULAR_SETUP
             #pragma shader_feature_local_fragment _EMISSION
