@@ -15,6 +15,9 @@ TagManager:
   - Checkpoint 2
   - Rubble Trigger
   - Goal
+  - Checkpoint
+  - Bounce
+  - UIManagerMain
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] public Text countdownRace;
     public GameObject[] crates;
 
+    [Header("Cursor")]
+    public Texture2D defaultCursor;
+    public Texture2D aimCursor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +49,16 @@ public class UiManager : MonoBehaviour
                 questIconsImage[i].sprite = questIconsArray[1];
             }
         }
+    }
+
+
+    public void changeToAimCursor()
+    {
+        Cursor.SetCursor(aimCursor, new Vector2(16, 16), CursorMode.Auto);
+    }
+    public void changeToDefaultCursor()
+    {
+        Cursor.SetCursor(defaultCursor, new Vector2(0, 0), CursorMode.Auto);
     }
 }
 
