@@ -8,14 +8,16 @@ using UnityEngine;
 public class HarpoonBoatMovement : MonoBehaviour
 {
     [Header("Movement")]
+    [SerializeField] AnimationCurve curve;
     [SerializeField] private GameObject harpoon;
     [SerializeField] private float speed;
     [SerializeField] private float pullSpeed;
     [SerializeField] private float maxMoveSpeed;
+    [SerializeField] private float _Current;
     public bool moving;
     public float rotateSpeed = 5f;
-    public Rigidbody rb;
-
+    private Rigidbody rb;
+    
     [Header("Collider Management")]
     public CameraAim cameraAim;
     private new CapsuleCollider collider;
@@ -24,17 +26,24 @@ public class HarpoonBoatMovement : MonoBehaviour
     [SerializeField] private float height;
 
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         if (moving == true) //Moving towards target.
         {
             Vector3 target = new Vector3(harpoon.transform.position.x, transform.position.y , harpoon.transform.position.z);
             Vector3 direction = target - transform.position;
-            Vector3 force = direction / 100 * pullSpeed;
+            Vector3 force = (direction / 100) * pullSpeed;
 
-            rb.AddForce(force, ForceMode.Impulse);
+            //transform.position = Vector3.Lerp(transform.position, target, curve.Evaluate(Time.deltaTime));          
 
+            rb.AddForce(force , ForceMode.Impulse);
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxMoveSpeed);
+
 
 
             var targetRotation = Quaternion.LookRotation(target - transform.position);
