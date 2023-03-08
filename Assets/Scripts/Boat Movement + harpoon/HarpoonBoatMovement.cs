@@ -39,12 +39,8 @@ public class HarpoonBoatMovement : MonoBehaviour
             Vector3 direction = target - transform.position;
             Vector3 force = (direction / 100) * pullSpeed;
 
-            //transform.position = Vector3.Lerp(transform.position, target, curve.Evaluate(Time.deltaTime));          
-
             rb.AddForce(force , ForceMode.Impulse);
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxMoveSpeed);
-
-
 
             var targetRotation = Quaternion.LookRotation(target - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);

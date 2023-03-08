@@ -26,10 +26,12 @@ public class Harpoon : MonoBehaviour
 
     [Header("Rope")]
     public Transform ropePosition;
+    [SerializeField] private Rope rope;
 
     private void Awake()
     {
         FindBoat();
+        SetRope();
         returnSpeed = launcher.GetComponent<CameraAim>().returnSpeed;
         maxDistance = launcher.GetComponent<CameraAim>().harpoonMaxDist;
     }
@@ -103,11 +105,18 @@ public class Harpoon : MonoBehaviour
 
     public void DestroyHarpoon()
     {
-        //launcher.GetComponent<HarpoonAim>().HarpoonDead();
         launcher.GetComponent<CameraAim>().HarpoonDead();
+        rope.makeInvisble();
         Destroy(gameObject);
     }
 
+    public void SetRope()
+    {
+        rope = GameObject.FindGameObjectWithTag("Rope").GetComponent<Rope>();
+        rope.makeVisable();
+
+        rope.harpoonLink = ropePosition;
+    }
     
 }
 
