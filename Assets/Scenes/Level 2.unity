@@ -3544,6 +3544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointArray: []
   agentGoal: {fileID: 0}
+  checkpointTransform: {fileID: 0}
 --- !u!1001 &324537226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26252,9 +26253,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4901833781713424934, guid: f637989eb1f329c439792ab640cc17b7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4901833781713424936, guid: f637989eb1f329c439792ab640cc17b7, type: 3}
       propertyPath: m_Name
       value: Water Plane
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901833781713424936, guid: f637989eb1f329c439792ab640cc17b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f637989eb1f329c439792ab640cc17b7, type: 3}
@@ -27369,7 +27378,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.41
   m_Pitch: 1
   Loop: 0

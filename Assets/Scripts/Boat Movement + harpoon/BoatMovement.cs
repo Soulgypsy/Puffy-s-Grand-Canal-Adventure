@@ -21,8 +21,9 @@ public class BoatMovement : MonoBehaviour
     public bool wonRace = false;
     public PurpleBoatRacing race;
 
-    public GameObject[] rubble;
-    public bool rubbleTriggered = false;
+    //public GameObject[] rubble;
+    //public bool rubbleTriggered = false;
+    //public bool rublleDeactivated = false;
 
     [Header("Key Inputs")]
     [SerializeField] private KeyCode forwardKey;
@@ -40,11 +41,13 @@ public class BoatMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        for (int i = 0; i < rubble.Length; i++)
+        /*if (rublleDeactivated == false)
         {
-            rubble[i].SetActive(false);
-        }
-        
+            for (int i = 0; i < rubble.Length; i++)
+            {
+                rubble[i].SetActive(false);
+            }
+        }*/
     }
 
     private void Update()
@@ -56,8 +59,6 @@ public class BoatMovement : MonoBehaviour
 
     private void MyInput()
     {
-        if (race.startCounter == false)
-        {
             if (Input.GetKey(forwardKey))
             {
                 moveForward = true;
@@ -83,7 +84,7 @@ public class BoatMovement : MonoBehaviour
                 turnRight = true;
             else
                 turnRight = false;
-        }
+
     }
 
     private void FixedUpdate()
@@ -171,14 +172,14 @@ public class BoatMovement : MonoBehaviour
 
         if (other.tag == "Rubble Trigger")
         {
-            if(rubbleTriggered == false)
+            /*if(rubbleTriggered == false)
             {
                 rubbleTriggered = true;
                 for (int i = 0; i < rubble.Length; i++)
                 {
                     rubble[i].SetActive(true);
                 }
-            }
+            }*/
             
         }
 
