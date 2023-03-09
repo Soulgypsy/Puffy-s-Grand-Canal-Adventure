@@ -10,6 +10,7 @@ public class Harpoon : MonoBehaviour
     [SerializeField] private float fireTimer;
     [SerializeField] private float timeAlive;
     [SerializeField] private GameObject launcher;
+    [SerializeField] private CameraAim cameraAim;
     public float returnSpeed;
     public float distance;
     private float maxDistance;
@@ -28,12 +29,15 @@ public class Harpoon : MonoBehaviour
     public Transform ropePosition;
     [SerializeField] private Rope rope;
 
+    [Header("Particles")]
+    public ParticleSystem hitParticle;
+
     private void Awake()
     {
         FindBoat();
         SetRope();
-        returnSpeed = launcher.GetComponent<CameraAim>().returnSpeed;
-        maxDistance = launcher.GetComponent<CameraAim>().harpoonMaxDist;
+        returnSpeed = cameraAim.returnSpeed;
+        maxDistance = cameraAim.harpoonMaxDist;
     }
 
     void timer()
@@ -62,6 +66,7 @@ public class Harpoon : MonoBehaviour
     public void FindBoat()
     {
         launcher = GameObject.FindGameObjectWithTag("HarpoonLauncher"); 
+        cameraAim = launcher.GetComponent<CameraAim>();
     }
 
     private void OnTriggerEnter(Collider other) //Hitiing the boats collection collider.
@@ -78,7 +83,8 @@ public class Harpoon : MonoBehaviour
         {
             timerOn = false;
             Destroy(rb);
-            launcher.GetComponent<CameraAim>().HarpoonHit(); //change for differnt aiming system 
+            cameraAim.HarpoonHit(); 
+            activateParticles();
             currentRock = collision.gameObject;
         }
         else if (collision.gameObject.tag == "Collectable" & collected == false)
@@ -97,16 +103,21 @@ public class Harpoon : MonoBehaviour
             stopLooking = true;
             returning = true;
         }
-        else
+        else //Returning after hitting nothing
         {
             stopLooking = true;
+            cameraAim.audioSource.volume = 1;
+            cameraAim.audioSource.PlayOneShot(cameraAim.reelBack);
+            Debug.Log("Returning");
         }
     }
 
     public void DestroyHarpoon()
     {
-        launcher.GetComponent<CameraAim>().HarpoonDead();
+        cameraAim.HarpoonDead();
         rope.makeInvisble();
+        cameraAim.audioSource.Stop();
+        cameraAim.audioSource.volume = 0.4f;
         Destroy(gameObject);
     }
 
@@ -114,8 +125,14 @@ public class Harpoon : MonoBehaviour
     {
         rope = GameObject.FindGameObjectWithTag("Rope").GetComponent<Rope>();
         rope.makeVisable();
-
         rope.harpoonLink = ropePosition;
+    }
+
+    public void activateParticles()
+    {
+        hitParticle.Play();
+        ParticleSystem.EmissionModule em = hitParticle.emission;
+        em.enabled = true;
     }
     
 }

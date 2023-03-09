@@ -33,9 +33,14 @@ public class CameraAim : MonoBehaviour
     public Transform collecionArea;
     public bool Stored;
 
+    [Header("Audio")]
+    public AudioClip harpoonHit;
+    public AudioClip reelBack;
+    public AudioSource audioSource;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         cam = Camera.main;
         UiManager = GameObject.FindGameObjectWithTag("UIManagerMain").GetComponent<UiManager>();
     }
@@ -94,6 +99,7 @@ public class CameraAim : MonoBehaviour
     public void HarpoonHit()
     {
         movement.Actived(currentHarpoon);
+        audioSource.PlayOneShot(harpoonHit);
     }
     public void HarpoonDead()
     {
