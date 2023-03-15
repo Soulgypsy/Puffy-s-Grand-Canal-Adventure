@@ -10,7 +10,7 @@ public class CameraDelay : MonoBehaviour
     public Vector3 offset;
     public Vector3 lookOffset;
     public float turnSpeed = 0.5f;
-    public BoatMovementOld moveBackwards;
+    public BoatMovement moveBackwards;
 
     // Update is called once per frame
     void LateUpdate()
