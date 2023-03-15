@@ -12,7 +12,7 @@ public class CheckpointArray : MonoBehaviour
 
     private void Awake()
     {
-        //Transform checkpointTransform = transform.Find("Checkpoints");
+        Transform checkpointTransform = transform.Find("Checkpoints");
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
         foreach (Transform checkpointSingleTransform in checkpointTransform)
@@ -20,11 +20,18 @@ public class CheckpointArray : MonoBehaviour
             Debug.Log(checkpointSingleTransform);
             CheckpointScript checkpoint = checkpointSingleTransform.GetComponent<CheckpointScript>();
             checkpoint.SetTrackCheckpoint(this);
-            
             checkpointArray.Add(checkpoint);
         }
 
         nextCheckpointIndex = 0;
+    }
+
+    public void Update()
+    {
+        if (nextCheckpointIndex != checkpointArray.Count)
+        {
+            checkpointArray[nextCheckpointIndex].meshRenderer.enabled = true;
+        }
     }
 
     public void PlayerThroughCheckpointTransform(CheckpointScript checkpoint)
@@ -33,6 +40,7 @@ public class CheckpointArray : MonoBehaviour
         {
             //correct checkpoint
             Debug.Log("Correct");
+            checkpointArray[nextCheckpointIndex].meshRenderer.enabled = false;
             nextCheckpointIndex++;
             if (nextCheckpointIndex == checkpointArray.Count)
             {
@@ -44,26 +52,6 @@ public class CheckpointArray : MonoBehaviour
             //incorrect checkpoint
             Debug.Log("Incorrect");
         }
-
     }
-    public void AgentThroughCheckpointTransform(CheckpointScript checkpoint)
-    {
-        if (checkpointArray.IndexOf(checkpoint) == nextCheckpointIndex)
-        {
-            //correct checkpoint
-            Debug.Log("Correct");
-            nextCheckpointIndex++;
-            agentGoal.position = checkpoint.gameObject.transform.position;
-            if (nextCheckpointIndex == checkpointArray.Count)
-            {
-                Debug.Log("win");
-            }
-        }
-        else
-        {
-            //incorrect checkpoint
-            Debug.Log("Incorrect");
-        }
 
-    }
 }

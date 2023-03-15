@@ -6,11 +6,12 @@ using UnityEngine.AI;
 public class CheckpointScript : MonoBehaviour
 {
     private CheckpointArray checkpointArray;
-    private MeshRenderer meshRenderer;
+    public MeshRenderer meshRenderer;
 
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.enabled = false;
     }
 
     private void Start()
@@ -28,11 +29,6 @@ public class CheckpointScript : MonoBehaviour
         {
             checkpointArray.PlayerThroughCheckpointTransform(this);
             gameObject.SetActive(false);
-        }
-
-        if (other.tag == "RaceAgent")
-        {
-            checkpointArray.AgentThroughCheckpointTransform(this);
         }
     }
 

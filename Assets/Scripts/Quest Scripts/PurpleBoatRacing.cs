@@ -7,7 +7,7 @@ public class PurpleBoatRacing : MonoBehaviour
     public bool raceAllowed = false;
     public GameObject interactImage;
     public Transform transformPlayer;
-    public BoatMovement playerRaceCondition;
+    public BoatMovementOld playerRaceCondition;
     public Waypoint waypointMark;
     public PaintQuest collectedCheck;
     public float raceSpeed = 30f;

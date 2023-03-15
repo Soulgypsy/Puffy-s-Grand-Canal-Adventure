@@ -3542,7 +3542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af73b3a354140c048a7b743d9239d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointArray: []
+  checkpointArray:
+  - {fileID: 880485793}
+  - {fileID: 1329055351}
   agentGoal: {fileID: 0}
   checkpointTransform: {fileID: 0}
 --- !u!1001 &324537226
@@ -10273,6 +10275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae7fd16a327f7f4ea0984bc051080f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 0}
 --- !u!1 &896479462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4264243711191187314, guid: 8804c938caadaaf4b9ef2d378924fe2a, type: 3}
@@ -14503,6 +14506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae7fd16a327f7f4ea0984bc051080f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 0}
 --- !u!135 &1329055352
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27753,10 +27757,6 @@ MonoBehaviour:
   moveBackward: 0
   wonRace: 0
   race: {fileID: 2130972105}
-  rubble:
-  - {fileID: 1372838193}
-  - {fileID: 308172399}
-  rubbleTriggered: 0
   forwardKey: 119
   backKey: 115
   rightKey: 100
@@ -29708,6 +29708,7 @@ MonoBehaviour:
   crates:
   - {fileID: 6843027419527527094}
   - {fileID: 6843027420055934304}
+  deactivated: 0
   defaultCursor: {fileID: 2800000, guid: bfd5835d633532e489c0c25544a2fb50, type: 3}
   aimCursor: {fileID: 2800000, guid: 4d276f03e9bdb5f48bdb8717f6a6979c, type: 3}
 --- !u!1 &8699751346441491633
