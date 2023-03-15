@@ -3542,9 +3542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af73b3a354140c048a7b743d9239d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointArray:
-  - {fileID: 880485793}
-  - {fileID: 1329055351}
+  checkpointArray: []
   agentGoal: {fileID: 0}
   checkpointTransform: {fileID: 0}
 --- !u!1001 &324537226
@@ -10275,7 +10273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae7fd16a327f7f4ea0984bc051080f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 880485791}
 --- !u!1 &896479462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4264243711191187314, guid: 8804c938caadaaf4b9ef2d378924fe2a, type: 3}
@@ -14506,7 +14504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae7fd16a327f7f4ea0984bc051080f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 1329055353}
 --- !u!135 &1329055352
 SphereCollider:
   m_ObjectHideFlags: 0
