@@ -15,14 +15,23 @@ public class UiManager : MonoBehaviour
     [SerializeField] Image[] questIconsImage;
     [SerializeField] public Text countdownRace;
     public GameObject[] crates;
+    public bool deactivated;
+
+    [Header("Cursor")]
+    public Texture2D defaultCursor;
+    public Texture2D aimCursor;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < crates.Length; i++)
+        if (deactivated == false)
         {
-            questScore[i] = crates[i].GetComponent<Collectables>();
+            for (int i = 0; i < crates.Length; i++)
+            {
+                questScore[i] = crates[i].GetComponent<Collectables>();
+            }
         }
+
     }
 
     void Update()
@@ -38,13 +47,26 @@ public class UiManager : MonoBehaviour
             QuestMenuAnimator.SetBool("MenuUp", false);
         }
 
-        for  (int i = 0; i < crates.Length; i++)
+        if (deactivated == false)
         {
-            if (questScore[i].questScore == true)
+            for (int i = 0; i < crates.Length; i++)
             {
-                questIconsImage[i].sprite = questIconsArray[1];
+                if (questScore[i].questScore == true)
+                {
+                    questIconsImage[i].sprite = questIconsArray[1];
+                }
             }
         }
+    }
+
+
+    public void changeToAimCursor()
+    {
+        Cursor.SetCursor(aimCursor, new Vector2(16, 16), CursorMode.Auto);
+    }
+    public void changeToDefaultCursor()
+    {
+        Cursor.SetCursor(defaultCursor, new Vector2(0, 0), CursorMode.Auto);
     }
 }
 

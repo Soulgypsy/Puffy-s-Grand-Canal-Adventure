@@ -15,6 +15,12 @@ TagManager:
   - Checkpoint 2
   - Rubble Trigger
   - Goal
+  - Checkpoint
+  - Bounce
+  - UIManagerMain
+  - Rope
+  - RaceAgent
+  - Test
   layers:
   - Default
   - TransparentFX

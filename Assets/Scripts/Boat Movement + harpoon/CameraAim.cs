@@ -12,6 +12,7 @@ public class CameraAim : MonoBehaviour
     public float rayDistance;
     public LayerMask layer;
     public SelectionManager currentTarget;
+    private UiManager UiManager;
 
     [Header("Firing")]
     public GameObject harpoonPrefab;
@@ -32,9 +33,16 @@ public class CameraAim : MonoBehaviour
     public Transform collecionArea;
     public bool Stored;
 
+    [Header("Audio")]
+    public AudioClip harpoonHit;
+    public AudioClip reelBack;
+    public AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         cam = Camera.main;
+        UiManager = GameObject.FindGameObjectWithTag("UIManagerMain").GetComponent<UiManager>();
     }
 
     void Update()
@@ -65,17 +73,21 @@ public class CameraAim : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         //Raycast checking for valid objects.
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, rayDistance, layer))
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, rayDistance, layer)) //Over Hookable
         {
             currentTarget = hitInfo.collider.GetComponent<SelectionManager>();
-            currentTarget.selectedMarker.SetActive(true);
+            //currentTarget.selectedMarker.SetActive(true);
             target = hitInfo.collider.GetComponent<SelectionManager>().harpoonLockPos;
+
+           UiManager.changeToAimCursor();
         }
-        else if (currentTarget != null)
+        else if (currentTarget != null) //Off Hookable
         {
             target = null;
             currentTarget.selectedMarker.SetActive(false);
             currentTarget = null;
+
+            UiManager.changeToDefaultCursor();
         }
     }
     public void Fire()
@@ -87,10 +99,13 @@ public class CameraAim : MonoBehaviour
     public void HarpoonHit()
     {
         movement.Actived(currentHarpoon);
+        audioSource.PlayOneShot(harpoonHit);
     }
     public void HarpoonDead()
     {
         readyToFire = true;    
         movement.moving = false;
     }
+
+    
 }

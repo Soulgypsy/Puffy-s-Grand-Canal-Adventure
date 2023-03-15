@@ -265,14 +265,14 @@ half3 FaceShadowMapColor(half3 baseColor, half3 shadowdColor, float2 uv, OtoonPB
     float3 lightDir = light.direction.xyz;
     float3 front = otoonSurface.frontDirectionWS;
     float3 right = otoonSurface.rightDirectionWS;
-    float FrontL = dot(front.xz, lightDir.xz);
-    float RightL = dot(right.xz, lightDir.xz);
 
-    float2 lightData = float2(SAMPLE_TEXTURE2D_LOD(_FaceShadowMap, sampler_FaceShadowMap, float2(uv.x, uv.y), 0).r,
-    SAMPLE_TEXTURE2D_LOD(_FaceShadowMap, sampler_FaceShadowMap, float2(-uv.x, uv.y), 0).r);
+    float faceShadowValue = SAMPLE_TEXTURE2D_LOD(_FaceShadowMap, sampler_FaceShadowMap, float2(uv.x, uv.y), 0).r;
+    float faceShadowValue2 = SAMPLE_TEXTURE2D_LOD(_FaceShadowMap, sampler_FaceShadowMap, float2(-uv.x, uv.y), 0).r;
+    float switchShadow = (dot(normalize(right.xz), normalize(lightDir.xz)) * 0.5 + 0.5) > 0.5;
+    float flippedFaceShadow = lerp(faceShadowValue.r, faceShadowValue2, switchShadow.r);
+    float shadedArea = 1 - dot(normalize(front.xz), normalize(lightDir.xz));
 
-    lightData = pow(lightData, _FaceShadowMapPow);
-    float lightAttenuation = step(0, FrontL) * min(smoothstep(-_FaceShadowSmoothness * saturate(1 - abs(0.5 - FrontL * 0.5)) - RightL, -RightL, lightData.x), smoothstep(-_FaceShadowSmoothness * saturate(1 - abs(0.5 - FrontL * 0.5)) + RightL, RightL, lightData.y));
+    float lightAttenuation = smoothstep(shadedArea - _FaceShadowSmoothness, shadedArea + _FaceShadowSmoothness, flippedFaceShadow);
     return lerp(shadowdColor, baseColor, lightAttenuation);
 }
 
@@ -314,7 +314,7 @@ half clearCoatMask, bool specularHighlightsOff, float3 positionWS, float2 uv, fl
             half delta = fwidth(specMask);
             spec *= smoothstep(otoonSurface.specClipStrength - delta, otoonSurface.specClipStrength + delta, specMask);
         }
-    #endif // _SPECULARHIGHLIGHTS_OFF
+    #endif
 
     // CUSTOM SHADOW COLOR
     outColor = lerp(lerp(outColor, adjustShadowColor, shadowPower), outColor, light.shadowAttenuation);
@@ -441,10 +441,6 @@ half3 normalWS, half3 viewDirectionWS, float3 positionWS, float2 uv, float2 scre
     return outColor;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-//                    Custom Fragment Functions                              //
-///////////////////////////////////////////////////////////////////////////////
-
 half4 UniversalFragmentPBR_Extend(InputData inputData, SurfaceData surfaceData, float2 uv, float2 screenUV, OtoonPBRSurfaceData otoonSurface)
 {
     #ifdef _SPECULARHIGHLIGHTS_OFF
@@ -455,7 +451,6 @@ half4 UniversalFragmentPBR_Extend(InputData inputData, SurfaceData surfaceData, 
 
     BRDFData brdfData;
 
-    // NOTE: can modify alpha
     InitializeBRDFData(surfaceData.albedo, surfaceData.metallic, surfaceData.specular, surfaceData.smoothness, surfaceData.alpha, brdfData);
 
     BRDFData brdfDataClearCoat = (BRDFData)0;
@@ -537,7 +532,6 @@ half4 UniversalFragmentPBR_Extend(InputData inputData, SurfaceData surfaceData, 
 
 half4 UniversalFragmentToon_Extend(InputData inputData, half3 diffuse, half4 specularGloss, half smoothness, half3 emission, half alpha, float2 uv, float2 screenUV, OtoonPBRSurfaceData otoonSurface)
 {
-    // To ensure backward compatibility we have to avoid using shadowMask input, as it is not present in older shaders
     #if defined(SHADOWS_SHADOWMASK) && defined(LIGHTMAP_ON)
         half4 shadowMask = inputData.shadowMask;
     #elif !defined(LIGHTMAP_ON)
@@ -604,10 +598,6 @@ half4 UniversalFragmentToon_Extend(InputData inputData, half3 diffuse, half4 spe
     }
 
     color += emission;
-
-    //#if defined(_SPECGLOSSMAP) || defined(_SPECULAR_COLOR)
-    //finalColor += specularColor;
-    //#endif
     
     return half4(color, alpha);
 }
