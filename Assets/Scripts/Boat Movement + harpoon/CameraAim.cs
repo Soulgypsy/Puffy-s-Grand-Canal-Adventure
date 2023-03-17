@@ -47,7 +47,7 @@ public class CameraAim : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) & readyToFire == true)
+        if (Input.GetMouseButtonDown(0) & readyToFire == true & Time.deltaTime != 0)
         {
             Fire();
             readyToFire = false;
