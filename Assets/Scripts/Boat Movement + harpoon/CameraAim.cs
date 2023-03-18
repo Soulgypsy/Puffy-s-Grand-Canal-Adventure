@@ -19,6 +19,7 @@ public class CameraAim : MonoBehaviour
     [SerializeField] private GameObject currentHarpoon;
     public Transform spawnPoint;
     public bool readyToFire = true;
+    public bool harpoonOff;
     public float harpoonMaxDist;
 
     [Header("Harpoon Speed Values")]
@@ -47,7 +48,7 @@ public class CameraAim : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) & readyToFire == true & Time.deltaTime != 0)
+        if (Input.GetMouseButtonDown(0) & readyToFire == true & Time.deltaTime != 0 & harpoonOff == false)
         {
             Fire();
             readyToFire = false;

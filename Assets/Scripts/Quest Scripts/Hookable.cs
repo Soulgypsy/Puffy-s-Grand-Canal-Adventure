@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Hookable : MonoBehaviour
 {
-    private Renderer renderer;
+    private new Renderer renderer;
 
 
     void Start()

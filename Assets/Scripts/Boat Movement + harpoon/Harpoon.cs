@@ -108,7 +108,6 @@ public class Harpoon : MonoBehaviour
             stopLooking = true;
             cameraAim.audioSource.volume = 1;
             cameraAim.audioSource.PlayOneShot(cameraAim.reelBack);
-            Debug.Log("Returning");
         }
     }
 

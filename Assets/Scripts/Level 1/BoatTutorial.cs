@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BoatTutorial : MonoBehaviour
 {
+    [Header("GameObjects")]
     public GameObject[] waypointsP1;
     public GameObject[] waypointsP2;
-    [SerializeField] private int currentWaypoint;
+    public GameObject harpoonTrigger;
+    public GameObject endBarrier;
+    private int currentWaypoint;
+    [Header("Parts")]
     public bool part1Done;
 
     public void Awake()
@@ -23,11 +27,12 @@ public class BoatTutorial : MonoBehaviour
             waypointsP1[currentWaypoint - 1].gameObject.SetActive(false);
             waypointsP1[currentWaypoint].gameObject.SetActive(true);
         }
-        else
+        else //End of part
         {
             waypointsP1[currentWaypoint - 1].gameObject.SetActive(false);
             part1Done = true;
             currentWaypoint = 0;
+            harpoonTrigger.SetActive(true);
         }
 
     }
@@ -41,9 +46,10 @@ public class BoatTutorial : MonoBehaviour
             waypointsP2[currentWaypoint - 1].gameObject.SetActive(false);
             waypointsP2[currentWaypoint].gameObject.SetActive(true);
         }
-        else
+        else //End of part
         {
             waypointsP2[currentWaypoint - 1].gameObject.SetActive(false);
+            endBarrier.SetActive(false);
             part1Done = true;
         }
 
