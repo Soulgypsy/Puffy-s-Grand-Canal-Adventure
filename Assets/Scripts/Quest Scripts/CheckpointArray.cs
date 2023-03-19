@@ -7,7 +7,6 @@ public class CheckpointArray : MonoBehaviour
 {
     public List<CheckpointScript> checkpointArray;
     private int nextCheckpointIndex;
-    public Transform agentGoal;
     public Transform checkpointTransform;
 
     private void Awake()

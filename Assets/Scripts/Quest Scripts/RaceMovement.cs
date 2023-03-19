@@ -17,8 +17,9 @@ public class RaceMovement : MonoBehaviour
     public void Update()
     {
         float distance = Vector3.Distance(goal.position, transform.position);
+        print(distance);
 
-        if (distance < 0.2f) //Distance between boat and target.
+        if (distance < 2f) //Distance between boat and target.
         {
             currentTarget++;
             goal.position = checkPoints[currentTarget].position;
