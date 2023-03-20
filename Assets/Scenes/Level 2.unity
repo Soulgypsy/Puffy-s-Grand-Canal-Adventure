@@ -3186,7 +3186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointArray: []
-  agentGoal: {fileID: 0}
   checkpointTransform: {fileID: 0}
 --- !u!1001 &324537226
 PrefabInstance:
