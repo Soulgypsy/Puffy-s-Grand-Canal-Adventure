@@ -44,6 +44,7 @@ public class CheckpointArray : MonoBehaviour
             if (nextCheckpointIndex == checkpointArray.Count)
             {
                 Debug.Log("win");
+                checkpointArray[nextCheckpointIndex - 1].GetComponent<DialogueTrigger>().TriggerDialogue();
             }
         }
         else
