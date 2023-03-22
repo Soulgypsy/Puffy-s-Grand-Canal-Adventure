@@ -21,6 +21,7 @@ TagManager:
   - Rope
   - RaceAgent
   - Test
+  - PullObject
   layers:
   - Default
   - TransparentFX
