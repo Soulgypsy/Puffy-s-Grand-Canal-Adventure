@@ -53,7 +53,7 @@ public class CameraAim : MonoBehaviour
             Fire();
             readyToFire = false;
         }
-        else if (Input.GetMouseButtonUp(0) & readyToFire == false)
+        else if (Input.GetMouseButtonUp(0) & readyToFire == false & currentHarpoon.GetComponent<Harpoon>().hitPullable == false)
         {
             currentHarpoon.GetComponent<Harpoon>().ReturnToBoat();
         }
@@ -77,7 +77,6 @@ public class CameraAim : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo, rayDistance, layer)) //Over Hookable
         {
             currentTarget = hitInfo.collider.GetComponent<SelectionManager>();
-            //currentTarget.selectedMarker.SetActive(true);
             target = hitInfo.collider.GetComponent<SelectionManager>().harpoonLockPos;
 
            UiManager.changeToAimCursor();

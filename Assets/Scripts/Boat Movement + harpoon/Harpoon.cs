@@ -15,6 +15,7 @@ public class Harpoon : MonoBehaviour
     public float distance;
     private float maxDistance;
     private bool returning;
+    public bool hitPullable;
 
     [Header("Hitting Rocks")]
     [SerializeField] private bool timerOn = true;
@@ -83,7 +84,7 @@ public class Harpoon : MonoBehaviour
         {
             timerOn = false;
             Destroy(rb);
-            cameraAim.HarpoonHit(); 
+            cameraAim.HarpoonHit();
             activateParticles();
             currentRock = collision.gameObject;
         }
@@ -91,7 +92,14 @@ public class Harpoon : MonoBehaviour
         {
             timerOn = false;
             transform.SetParent(collision.transform);
-        }       
+        }
+        else if (collision.gameObject.tag == "PullObject")
+        {
+            timerOn = false;
+            hitPullable = true;
+            collision.gameObject.GetComponent<PullableObject>().startMoving = true;
+            Destroy(rb);
+        }
     }
 
     public void ReturnToBoat()
