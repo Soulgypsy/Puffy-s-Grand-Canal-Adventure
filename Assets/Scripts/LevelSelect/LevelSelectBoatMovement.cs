@@ -39,6 +39,10 @@ public class LevelSelectBoatMovement : MonoBehaviour
                 if (distance > 0.5)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, waypoints[tempTarget].position, speed * Time.deltaTime);
+
+                    Vector3 direction = transform.position - waypoints[tempTarget].position;
+                    transform.up = direction;
+
                 }
                 else
                 {
@@ -65,6 +69,9 @@ public class LevelSelectBoatMovement : MonoBehaviour
                 if (distance > 0.5)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, waypoints[tempTarget].position, speed * Time.deltaTime);
+
+                    Vector3 direction = transform.position - waypoints[tempTarget].position;
+                    transform.up = direction;
                 }
                 else
                 {
