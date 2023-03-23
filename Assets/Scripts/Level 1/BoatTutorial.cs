@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatTutorial : MonoBehaviour
 {
@@ -76,5 +77,6 @@ public class BoatTutorial : MonoBehaviour
     public void exitTrigger()
     {
         Debug.Log("Exit");
+        SceneManager.LoadScene("Level Select");
     }
 }

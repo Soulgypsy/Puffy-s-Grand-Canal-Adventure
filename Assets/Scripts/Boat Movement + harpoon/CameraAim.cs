@@ -53,7 +53,7 @@ public class CameraAim : MonoBehaviour
             Fire();
             readyToFire = false;
         }
-        else if (Input.GetMouseButtonUp(0) & readyToFire == false & currentHarpoon.GetComponent<Harpoon>().hitPullable == false)
+        else if (Input.GetMouseButtonUp(0) & readyToFire == false)
         {
             currentHarpoon.GetComponent<Harpoon>().ReturnToBoat();
         }
