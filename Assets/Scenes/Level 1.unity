@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 151.4
+      value: 149.86436
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -156,23 +156,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -146
+      value: -152.68011
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8081581
+      value: 0.7548481
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000006583285
+      value: 0.000000069693456
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.58896565
+      value: -0.65589964
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000004797731
+      value: 0.000000042173543
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -72.167
+      value: -81.976
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -189,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
       propertyPath: m_Name
       value: EA_Armadillo_model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
@@ -327,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28609200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Environment Boats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 543450651986594650}
+  - {fileID: 1937022275}
   - {fileID: 1252944559}
   - {fileID: 543450651840956839}
   - {fileID: 1162982006}
@@ -992,6 +996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBoat (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
 --- !u!1 &81853004
@@ -1234,7 +1242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 94878659}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shored Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1651,6 +1659,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120724992}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &126289881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 126289882}
+  m_Layer: 0
+  m_Name: Dialog Boat Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &126289882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126289881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.556377, y: -3.0518532, z: -155.89337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1365530099}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &134512031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
 --- !u!1 &201615257
@@ -2120,7 +2164,7 @@ GameObject:
   - component: {fileID: 226491231}
   - component: {fileID: 226491230}
   - component: {fileID: 226491229}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: End Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2923,6 +2967,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
   m_PrefabInstance: {fileID: 577207510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &342641306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 342641307}
+  m_Layer: 3
+  m_Name: End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &342641307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342641306}
+  m_LocalRotation: {x: -0, y: 0.8212106, z: -0, w: 0.5706252}
+  m_LocalPosition: {x: 21.109505, y: 48.081444, z: -49.08641}
+  m_LocalScale: {x: 2.7873552, y: 2.7873554, z: 2.7873552}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937022275}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &347317285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 927b94583ecd29b4ba28cdcea289e2ad, type: 3}
@@ -3156,7 +3231,7 @@ GameObject:
   - component: {fileID: 390226606}
   - component: {fileID: 390226608}
   - component: {fileID: 390226607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: frame.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3390,6 +3465,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 1
+  isFirstTrigger: 0
 --- !u!65 &399175235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4105,6 +4181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FCrane
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c92512ea237931f469818991fb23984e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c92512ea237931f469818991fb23984e, type: 3}
 --- !u!1 &488210725
@@ -4479,6 +4559,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: edd62b0921e796944b012f0d633b06ba, type: 3}
       propertyPath: m_Name
       value: Terrain_L1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: edd62b0921e796944b012f0d633b06ba, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd62b0921e796944b012f0d633b06ba, type: 3}
@@ -4982,6 +5066,115 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535975396}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &536321527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 536321530}
+  - component: {fileID: 536321529}
+  - component: {fileID: 536321528}
+  m_Layer: 0
+  m_Name: Dialog Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &536321528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536321527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!20 &536321529
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536321527}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
+  orthographic: 0
+  orthographic size: 10
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 446
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &536321530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536321527}
+  m_LocalRotation: {x: -0.026896592, y: 0.897916, z: 0.055412788, w: 0.43583593}
+  m_LocalPosition: {x: -38.7, y: 13.9, z: -114.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: -7.063, y: 128.217, z: 0}
 --- !u!1001 &540572608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5048,6 +5241,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
@@ -5117,6 +5314,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
@@ -5381,6 +5582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
 --- !u!1 &602759001
@@ -5447,6 +5652,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &602759005
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5740,7 +5946,7 @@ GameObject:
   - component: {fileID: 649572997}
   - component: {fileID: 649572996}
   - component: {fileID: 649572995}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6225,7 +6431,7 @@ GameObject:
   - component: {fileID: 701547258}
   - component: {fileID: 701547257}
   - component: {fileID: 701547256}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6476,6 +6682,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &720958407
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6713,9 +6920,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: adec1b72f30c58640a0a83aff54b77c5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: adec1b72f30c58640a0a83aff54b77c5, type: 3}
       propertyPath: m_Name
       value: science museum2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adec1b72f30c58640a0a83aff54b77c5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: adec1b72f30c58640a0a83aff54b77c5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: adec1b72f30c58640a0a83aff54b77c5, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adec1b72f30c58640a0a83aff54b77c5, type: 3}
@@ -6825,7 +7048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 762816074}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Invisible Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7157,7 +7380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812646454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Buoys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7450,6 +7673,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &837222537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7536,7 +7760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837395373}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8943,6 +9167,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 1
 --- !u!136 &1022727413
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9192,6 +9417,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &1061181163
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9711,6 +9937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hydro
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4686b3e5ff0b9ca4ba69a8b3e0440965, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4686b3e5ff0b9ca4ba69a8b3e0440965, type: 3}
 --- !u!1 &1109801733
@@ -9764,6 +9994,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &1109801736
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9852,7 +10083,7 @@ GameObject:
   - component: {fileID: 1127347085}
   - component: {fileID: 1127347087}
   - component: {fileID: 1127347086}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9990,6 +10221,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
@@ -10298,7 +10533,7 @@ GameObject:
   - component: {fileID: 1169813871}
   - component: {fileID: 1169813870}
   - component: {fileID: 1169813869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10449,6 +10684,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
       propertyPath: m_Name
       value: OA_Buoy_v1_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
@@ -10697,6 +10936,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &1226380362
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10980,7 +11220,7 @@ GameObject:
   - component: {fileID: 1250838799}
   - component: {fileID: 1250838798}
   - component: {fileID: 1250838797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rivver wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11099,7 +11339,7 @@ GameObject:
   - component: {fileID: 1260753473}
   - component: {fileID: 1260753475}
   - component: {fileID: 1260753474}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 3 (no texture) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11336,6 +11576,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 615561619cd09494890f10b478b9e008, type: 3}
       propertyPath: m_Name
       value: GTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 615561619cd09494890f10b478b9e008, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 615561619cd09494890f10b478b9e008, type: 3}
@@ -11644,7 +11888,7 @@ GameObject:
   - component: {fileID: 1323386784}
   - component: {fileID: 1323386786}
   - component: {fileID: 1323386785}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 3 (no texture) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11912,6 +12156,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342159462}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1365530098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1365530099}
+  - component: {fileID: 1365530101}
+  - component: {fileID: 1365530100}
+  m_Layer: 7
+  m_Name: Puffy Dialog Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1365530099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365530098}
+  m_LocalRotation: {x: 0.47040227, y: 0.5227496, z: 0.5030873, w: 0.50235224}
+  m_LocalPosition: {x: 32.3, y: 4.9, z: 26}
+  m_LocalScale: {x: 0.38800797, y: 1.1875814, z: 0.87214917}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 126289882}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -3.059, y: 89.374, z: 87.058}
+--- !u!23 &1365530100
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365530098}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -7698276180169921633, guid: f5c30856b19331f419fa4aeadeca4656, type: 3}
+  - {fileID: 2100000, guid: 6acdda0e089b83e499704bfe684cad00, type: 2}
+  - {fileID: 2100000, guid: 895b97ea4f4595849a9034606e7d9aaf, type: 2}
+  - {fileID: 2100000, guid: c2544c544473e1c42a3318b0ca5516a3, type: 2}
+  - {fileID: 2100000, guid: 1056b0e7675bcea438f3e68e0221caba, type: 2}
+  - {fileID: 2100000, guid: 4fb896b9a8aadf84e90c0aee2c869f48, type: 2}
+  - {fileID: 2100000, guid: 5ba993ba88a455148891f42432ede961, type: 2}
+  - {fileID: 2100000, guid: 895b97ea4f4595849a9034606e7d9aaf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1365530101
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365530098}
+  m_Mesh: {fileID: 4270110202817925689, guid: f5c30856b19331f419fa4aeadeca4656, type: 3}
 --- !u!1 &1366407516
 GameObject:
   m_ObjectHideFlags: 0
@@ -11923,7 +12257,7 @@ GameObject:
   - component: {fileID: 1366407517}
   - component: {fileID: 1366407519}
   - component: {fileID: 1366407518}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: frame.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12007,7 +12341,7 @@ GameObject:
   - component: {fileID: 1372105118}
   - component: {fileID: 1372105117}
   - component: {fileID: 1372105116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12200,7 +12534,7 @@ GameObject:
   - component: {fileID: 1393616618}
   - component: {fileID: 1393616620}
   - component: {fileID: 1393616619}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13866,6 +14200,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &1622349212
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14191,7 +14526,7 @@ GameObject:
   - component: {fileID: 1701240871}
   - component: {fileID: 1701240870}
   - component: {fileID: 1701240869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rivver wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15062,6 +15397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1817867678}
   - component: {fileID: 1817867677}
+  - component: {fileID: 1817867679}
   m_Layer: 0
   m_Name: Tutorial Manager
   m_TagString: Untagged
@@ -15095,6 +15431,7 @@ MonoBehaviour:
   harpoonTrigger: {fileID: 1921299945}
   endBarrier: {fileID: 226491227}
   part1Done: 0
+  environmentBoat: {fileID: 3469287838117430529}
 --- !u!4 &1817867678
 Transform:
   m_ObjectHideFlags: 0
@@ -15110,6 +15447,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817867679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817867676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fe60c597440334e93f62f52543aead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoatMovement: {fileID: 1583272022}
+  dialogCam: {fileID: 536321529}
 --- !u!1 &1840021834
 GameObject:
   m_ObjectHideFlags: 0
@@ -15663,7 +16014,7 @@ GameObject:
   - component: {fileID: 1890667159}
   - component: {fileID: 1890667158}
   - component: {fileID: 1890667157}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15857,7 +16208,7 @@ GameObject:
   - component: {fileID: 1896593389}
   - component: {fileID: 1896593388}
   - component: {fileID: 1896593387}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: End Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16395,6 +16746,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 1
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &1921299949
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16459,6 +16811,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921299945}
   m_Mesh: {fileID: -5076798556035486163, guid: ecc740d512292be41ad1b749726c1f3b, type: 3}
+--- !u!1 &1937022274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937022275}
+  m_Layer: 3
+  m_Name: 'Moving Boat '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1937022275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937022274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 543450651986594650}
+  - {fileID: 342641307}
+  m_Father: {fileID: 28609200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1974682930
 GameObject:
   m_ObjectHideFlags: 0
@@ -16471,7 +16856,7 @@ GameObject:
   - component: {fileID: 1974682934}
   - component: {fileID: 1974682933}
   - component: {fileID: 1974682932}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17011,6 +17396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
 --- !u!1001 &2017830557
@@ -17079,6 +17468,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
       propertyPath: m_Name
       value: OA_Buoy_v1_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad348a1e568be3e4291c49e7d94bffb1, type: 3}
@@ -17766,6 +18159,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
       propertyPath: m_Name
       value: BigBoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
@@ -18495,7 +18892,7 @@ GameObject:
   - component: {fileID: 6834710767957554061}
   - component: {fileID: 1395079295352005574}
   - component: {fileID: 5430753127280897055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: frame.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18613,7 +19010,7 @@ GameObject:
   - component: {fileID: 4064612852185905468}
   - component: {fileID: 5667497571552456226}
   - component: {fileID: 7298893227779085889}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 3 (no texture)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18672,14 +19069,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147513414112}
-  m_LocalRotation: {x: -0, y: 0.8212106, z: -0, w: 0.5706252}
-  m_LocalPosition: {x: 21.109505, y: 48.081444, z: -49.08641}
+  m_LocalRotation: {x: 0, y: 0.57357657, z: -0, w: -0.81915194}
+  m_LocalPosition: {x: -83.5, y: 48.081444, z: -10.1}
   m_LocalScale: {x: 2.7873552, y: 2.7873554, z: 2.7873552}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 28609200}
+  m_Father: {fileID: 1937022275}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 110.412, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 290, z: 0}
 --- !u!4 &587751683751800622
 Transform:
   m_ObjectHideFlags: 0
@@ -18956,7 +19353,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 319
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -19085,7 +19482,7 @@ GameObject:
   - component: {fileID: 908719994547477640}
   - component: {fileID: 908719994547477644}
   - component: {fileID: 908719994547477645}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19193,8 +19590,9 @@ GameObject:
   - component: {fileID: 3469287838117430527}
   - component: {fileID: 1711813855128219701}
   - component: {fileID: 3469287838117430528}
-  m_Layer: 0
-  m_Name: BigBoat (2)
+  - component: {fileID: 3469287838117430529}
+  m_Layer: 3
+  m_Name: Moving Boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19212,7 +19610,7 @@ GameObject:
   - component: {fileID: 3469287837770204674}
   - component: {fileID: 1711813854850233032}
   - component: {fileID: 3469287837770204675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SmallBoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19228,7 +19626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651639273840}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19447,7 +19845,7 @@ GameObject:
   - component: {fileID: 3348396700908573626}
   - component: {fileID: 7732869344002750758}
   - component: {fileID: 1650212335785292927}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19830,7 +20228,7 @@ GameObject:
   - component: {fileID: 6909704504905645505}
   - component: {fileID: 6113051202829857253}
   - component: {fileID: 5516305382756943859}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19923,7 +20321,7 @@ GameObject:
   - component: {fileID: 1105131421354508783}
   - component: {fileID: 2378588723322583355}
   - component: {fileID: 3975937191277058870}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 1 (no texture)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19991,7 +20389,7 @@ GameObject:
   - component: {fileID: 7967766326796748155}
   - component: {fileID: 8482381506722978224}
   - component: {fileID: 8418640413177681893}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20312,7 +20710,7 @@ GameObject:
   - component: {fileID: 2491176072031084882}
   - component: {fileID: 1885634985819171633}
   - component: {fileID: 6083554844454434483}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20349,7 +20747,7 @@ GameObject:
   - component: {fileID: 4596194156805012330}
   - component: {fileID: 852666409993815408}
   - component: {fileID: 3704835902427686085}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20485,7 +20883,7 @@ GameObject:
   - component: {fileID: 3977350773662210728}
   - component: {fileID: 2695235111264570032}
   - component: {fileID: 5700398173062557296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20511,7 +20909,7 @@ GameObject:
   - component: {fileID: 7048597891690367281}
   - component: {fileID: 6015010272045516077}
   - component: {fileID: 6958875378694787506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20583,7 +20981,7 @@ GameObject:
   - component: {fileID: 3147048853181343247}
   - component: {fileID: 8732573831816580986}
   - component: {fileID: 4715678162363765573}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20739,6 +21137,7 @@ MonoBehaviour:
   boatTutorial: {fileID: 1817867677}
   isHarpoonTrigger: 0
   isExitTrigger: 0
+  isFirstTrigger: 0
 --- !u!136 &3130097475182955723
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20777,7 +21176,7 @@ GameObject:
   - component: {fileID: 587751683751800622}
   - component: {fileID: 5886641164551260494}
   - component: {fileID: 1784261096241429278}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21000,7 +21399,7 @@ GameObject:
   - component: {fileID: 4961404180364620767}
   - component: {fileID: 4742702936375379406}
   - component: {fileID: 3081028527984490060}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: frame.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21081,6 +21480,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8969651603161807517, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
+--- !u!114 &3469287838117430529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147513414112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ac9c2209af61548bcc4dcd175ef6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boatfinish: {fileID: 342641307}
+  isMoving: 0
+  speed: 15
 --- !u!33 &3503053654463590285
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21100,7 +21514,7 @@ GameObject:
   - component: {fileID: 2114590712217578838}
   - component: {fileID: 8290606151811994922}
   - component: {fileID: 5224826252088085776}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21238,7 +21652,7 @@ GameObject:
   - component: {fileID: 2828609027149979631}
   - component: {fileID: 6291405095811733598}
   - component: {fileID: 3208487827703442437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21475,7 +21889,7 @@ GameObject:
   - component: {fileID: 1741675590167252878}
   - component: {fileID: 3503053654463590285}
   - component: {fileID: 7250453603174569665}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 2 (no texture)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21523,7 +21937,7 @@ GameObject:
   - component: {fileID: 2500743774058211540}
   - component: {fileID: 1913720975994898778}
   - component: {fileID: 7267317826547896778}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21556,7 +21970,7 @@ GameObject:
   - component: {fileID: 9062620690242327577}
   - component: {fileID: 795586107910456071}
   - component: {fileID: 2370690979960077156}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 3 (no texture)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21707,7 +22121,7 @@ GameObject:
   - component: {fileID: 4901833779892709914}
   - component: {fileID: 4901833779892709915}
   - component: {fileID: 4901833779892709908}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Water Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21894,7 +22308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4766562298201453653}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22223,7 +22637,7 @@ GameObject:
   - component: {fileID: 1893959329504678116}
   - component: {fileID: 1259154071102315712}
   - component: {fileID: 657904731887594198}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22406,7 +22820,7 @@ GameObject:
   - component: {fileID: 2650580340632393935}
   - component: {fileID: 1744800622844956184}
   - component: {fileID: 7267002120142773098}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27404,7 +27818,7 @@ GameObject:
   - component: {fileID: 2629297567795340308}
   - component: {fileID: 1645249430273763336}
   - component: {fileID: 2683694661572787351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27838,7 +28252,7 @@ GameObject:
   - component: {fileID: 7439644401886121079}
   - component: {fileID: 6883643580803712532}
   - component: {fileID: 1279482700853992342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27926,7 +28340,7 @@ GameObject:
   - component: {fileID: 105536118232817402}
   - component: {fileID: 323684591340857579}
   - component: {fileID: 8029497321729612649}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: frame.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28008,7 +28422,7 @@ GameObject:
   - component: {fileID: 7926355242542975786}
   - component: {fileID: 4367603202815976031}
   - component: {fileID: 350706925274054240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28129,7 +28543,7 @@ GameObject:
   - component: {fileID: 5378183348106273396}
   - component: {fileID: 1480902929535034154}
   - component: {fileID: 3755980450914718631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28155,7 +28569,7 @@ GameObject:
   - component: {fileID: 7128563476309750474}
   - component: {fileID: 1360946644002551163}
   - component: {fileID: 7577962734241005856}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28249,7 +28663,7 @@ GameObject:
   - component: {fileID: 6739406917092483755}
   - component: {fileID: 8444771466072244904}
   - component: {fileID: 2392057338880277476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: building 2 (no texture)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28275,7 +28689,7 @@ GameObject:
   - component: {fileID: 7428950834311497201}
   - component: {fileID: 6855152961893115007}
   - component: {fileID: 2411168895315000559}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

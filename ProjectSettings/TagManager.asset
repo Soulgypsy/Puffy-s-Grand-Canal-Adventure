@@ -22,15 +22,16 @@ TagManager:
   - RaceAgent
   - Test
   - PullObject
+  - Dialog Camera
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
   - 
-  - 
+  - Dialog
   - Hookable
   - 
   - 

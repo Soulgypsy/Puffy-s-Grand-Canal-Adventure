@@ -7,6 +7,7 @@ public class TutorialTriggers : MonoBehaviour
     public BoatTutorial boatTutorial;
     public bool isHarpoonTrigger;
     public bool isExitTrigger;
+    public bool isFirstTrigger;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,9 @@ public class TutorialTriggers : MonoBehaviour
             if (other.tag == "PlayerBoat")
             {
                 boatTutorial.partSelect();
+
+                if (isFirstTrigger)
+                    boatTutorial.moveBoat();
             }
         }
         

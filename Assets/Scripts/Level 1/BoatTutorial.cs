@@ -11,8 +11,12 @@ public class BoatTutorial : MonoBehaviour
     public GameObject harpoonTrigger;
     public GameObject endBarrier;
     private int currentWaypoint;
+
     [Header("Parts")]
     public bool part1Done;
+
+    [Header("Boat Movement")]
+    public EvironmentBoat environmentBoat;
 
     public void Awake()
     {
@@ -78,5 +82,10 @@ public class BoatTutorial : MonoBehaviour
     {
         Debug.Log("Exit");
         SceneManager.LoadScene("Level Select");
+    }
+
+    public void moveBoat()
+    {
+        environmentBoat.isMoving = true;
     }
 }
