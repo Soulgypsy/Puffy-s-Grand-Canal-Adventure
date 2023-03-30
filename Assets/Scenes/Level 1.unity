@@ -20761,6 +20761,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 131197248915483958, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.33228
+      objectReference: {fileID: 0}
+    - target: {fileID: 131197248915483958, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.919555
+      objectReference: {fileID: 0}
+    - target: {fileID: 131197248915483958, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.3579893
+      objectReference: {fileID: 0}
+    - target: {fileID: 131197248915483958, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 302
+      objectReference: {fileID: 0}
+    - target: {fileID: 131197248915483958, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -416
+      objectReference: {fileID: 0}
+    - target: {fileID: 131197248915483959, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636395240141274634, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
       propertyPath: m_Name
       value: Canvas
