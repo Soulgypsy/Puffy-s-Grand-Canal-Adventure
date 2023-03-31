@@ -6,6 +6,7 @@ public class ScriptManager : MonoBehaviour
 {
     [Header("Scripts")]
     public BoatMovement BoatMovement;
+    public DialogueManager DialogueManager;
 
     [Header("Camera")] 
     public Camera dialogCam;
@@ -23,7 +24,7 @@ public class ScriptManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space")) // temp
+        if (DialogueManager.dialogueOn == false) // temp
         {
             reactivateBoat();
         }

@@ -27,8 +27,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         box.SetActive(true);
-        tint.SetActive(true);
-        portraitPuffy.SetActive(true);
+        //tint.SetActive(true);
+        //portraitPuffy.SetActive(true);
         dialogueOn = true;
         for (int i = 0; i < portrait.Length; i++)
         {

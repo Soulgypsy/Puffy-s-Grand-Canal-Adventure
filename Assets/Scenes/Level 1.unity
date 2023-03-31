@@ -1600,6 +1600,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115673722}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &117900316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131197249165020918, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+  m_PrefabInstance: {fileID: 6747657963168782343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120724992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2039,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146327098}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &162412532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131197248915483959, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+  m_PrefabInstance: {fileID: 6747657963168782343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177695502
 GameObject:
   m_ObjectHideFlags: 0
@@ -6702,6 +6712,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663553527}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &684854179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131197248261286639, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+  m_PrefabInstance: {fileID: 6747657963168782343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687987095
 GameObject:
   m_ObjectHideFlags: 0
@@ -10167,6 +10182,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066011667}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1070912264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5692800495697628129, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+  m_PrefabInstance: {fileID: 6747657963168782343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1075103265
 GameObject:
   m_ObjectHideFlags: 0
@@ -11840,6 +11866,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 198cd956d82bb8e4bb2919cb07a3becd, type: 3}
   m_PrefabInstance: {fileID: 73460346}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1256026116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8545908691852605203, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+  m_PrefabInstance: {fileID: 6747657963168782343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1260753472
 GameObject:
   m_ObjectHideFlags: 0
@@ -14172,6 +14209,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551935585}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1554916108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131197247997613787, guid: 308adbbfe2a9b8c49aa4bec97d384080, type: 3}
+  m_PrefabInstance: {fileID: 6747657963168782343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1557161897
 GameObject:
   m_ObjectHideFlags: 0
@@ -15413,6 +15455,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767182093}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1767394127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c92512ea237931f469818991fb23984e, type: 3}
+  m_PrefabInstance: {fileID: 464925545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767394132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767394127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461f78769ad5567429568ac9a6cab2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Crane
+    sentences:
+    - Test
+  portrait: {fileID: 117900316}
+  portraitCheck: 0
+--- !u!114 &1767394133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767394127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a8eda81bbbb644988677b670d062b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questObject: {fileID: 1952140545}
 --- !u!1 &1769380035
 GameObject:
   m_ObjectHideFlags: 0
@@ -15874,6 +15952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoatMovement: {fileID: 1583272022}
+  DialogueManager: {fileID: 6947691612118588604}
   dialogCam: {fileID: 536321529}
 --- !u!1 &1840021834
 GameObject:
@@ -17256,6 +17335,37 @@ Transform:
   - {fileID: 543450651986594650}
   - {fileID: 342641307}
   m_Father: {fileID: 28609200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1952140545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952140546}
+  m_Layer: 3
+  m_Name: DialogueObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1952140546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952140545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 909772395}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967319756
@@ -21906,23 +22016,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f92509c78a5e2642b6205975e941aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  box: {fileID: 0}
-  tint: {fileID: 0}
-  portraitPuffy: {fileID: 0}
+  nameText: {fileID: 1070912264}
+  dialogueText: {fileID: 1256026116}
+  box: {fileID: 162412532}
+  tint: {fileID: 684854179}
+  portraitPuffy: {fileID: 1554916108}
   portrait:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1767394132}
   dialogueOn: 0
   continueDialogue: 32
 --- !u!4 &6947691612118588605
