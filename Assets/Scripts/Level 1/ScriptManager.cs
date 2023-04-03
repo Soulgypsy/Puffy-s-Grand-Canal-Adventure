@@ -28,6 +28,10 @@ public class ScriptManager : MonoBehaviour
         {
             reactivateBoat();
         }
+        if (DialogueManager.dialogueOn == true)
+        {
+            deactivateBoat();
+        }
     }
 
     private void reactivateBoat()
@@ -36,5 +40,13 @@ public class ScriptManager : MonoBehaviour
         dialogCam.enabled = false;
         mainCam.enabled = true;
         Time.timeScale = 1;
+    }
+
+    private void deactivateBoat()
+    {
+        mainCam.enabled = false;
+        dialogCam.enabled = true;
+        BoatMovement.enabled = false;
+        Time.timeScale = 0;
     }
 }
