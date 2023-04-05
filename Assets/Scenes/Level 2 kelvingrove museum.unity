@@ -9544,6 +9544,7 @@ GameObject:
   - component: {fileID: 1829561709}
   - component: {fileID: 1829561708}
   - component: {fileID: 1829561707}
+  - component: {fileID: 1829561711}
   m_Layer: 0
   m_Name: Rapids
   m_TagString: Untagged
@@ -9559,11 +9560,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829561706}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.5356958, z: 1}
+  m_Center: {x: 0, y: 0.76784724, z: 0}
 --- !u!23 &1829561708
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9625,10 +9626,25 @@ Transform:
   m_LocalPosition: {x: -74, y: -1.4, z: -196.9}
   m_LocalScale: {x: 149.63115, y: 4.8200006, z: 41.711723}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1863977276}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -15.1, z: 0}
+--- !u!114 &1829561711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829561706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ef681023171394cab85d91e4e02194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDir: {fileID: 1863977276}
+  forcePower: 50
 --- !u!1001 &1831163318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9867,6 +9883,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1863977275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863977276}
+  m_Layer: 0
+  m_Name: Force Direction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863977276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863977275}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1829561710}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1873980753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12803,7 +12850,7 @@ MonoBehaviour:
     m_PostInfinity: 1
     m_RotationOrder: 4
   harpoon: {fileID: 3016704377951521041, guid: e9e6919b15f5c6f4494cd446ddc54761, type: 3}
-  speed: 30
+  speed: 50
   pullSpeed: 0.5
   maxMoveSpeed: 100
   _Current: 0
@@ -13119,7 +13166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   defaultTarget: {fileID: 889845079523566724}
-  rayDistance: 140
+  rayDistance: 160
   layer:
     serializedVersion: 2
     m_Bits: 256
@@ -13129,9 +13176,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 889845079126567348}
   readyToFire: 1
   harpoonOff: 0
-  harpoonMaxDist: 120
-  launchSpeed: 100
-  returnSpeed: 60
+  harpoonMaxDist: 140
+  launchSpeed: 200
+  returnSpeed: 100
   hit: 0
   movement: {fileID: 889845079858485713}
   collecionArea: {fileID: 889845079059012691}
