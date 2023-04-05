@@ -11,7 +11,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject tint;
     public GameObject portraitPuffy;
     public DialogueTrigger[] portrait;
+    public CameraMoveTutorial cameraFinished;
     public bool dialogueOn;
+    public bool cameraMovement;
 
     private Queue<string> sentences;
 
@@ -22,6 +24,15 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        cameraMovement = false;
+    }
+
+    private void Update()
+    {
+        if (cameraFinished.cameraFinished == true)
+        {
+            cameraMovement = false;
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -86,6 +97,8 @@ public class DialogueManager : MonoBehaviour
         }
         portraitPuffy.SetActive(false);
         dialogueOn = false;
+        cameraMovement = true;
+
         Time.timeScale = 1;
         Debug.Log("End of conversation");
     }

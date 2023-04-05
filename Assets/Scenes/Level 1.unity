@@ -5736,6 +5736,7 @@ GameObject:
   - component: {fileID: 536321530}
   - component: {fileID: 536321529}
   - component: {fileID: 536321528}
+  - component: {fileID: 536321531}
   m_Layer: 0
   m_Name: Dialog Camera
   m_TagString: Untagged
@@ -5834,6 +5835,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: -7.063, y: 128.217, z: 0}
+--- !u!114 &536321531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536321527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ccb33b149720340adaa779e288db6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraMove: {fileID: 6947691612118588604}
+  cameraFinished: 0
+  timerEnabled: 0
+  cameraTutorial: {fileID: 536321529}
 --- !u!1001 &540572608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16361,6 +16378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoatMovement: {fileID: 1583272022}
   DialogueManager: {fileID: 6947691612118588604}
+  cameraMoveTutorial: {fileID: 536321531}
   dialogCam: {fileID: 536321529}
 --- !u!1 &1840021834
 GameObject:
@@ -27591,7 +27609,9 @@ MonoBehaviour:
   portraitPuffy: {fileID: 6662622757461348060}
   portrait:
   - {fileID: 1952140548}
+  cameraFinished: {fileID: 536321531}
   dialogueOn: 0
+  cameraMovement: 0
   continueDialogue: 32
 --- !u!4 &6947691612118588605
 Transform:

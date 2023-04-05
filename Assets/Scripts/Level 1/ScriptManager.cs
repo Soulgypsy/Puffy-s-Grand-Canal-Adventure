@@ -7,6 +7,7 @@ public class ScriptManager : MonoBehaviour
     [Header("Scripts")]
     public BoatMovement BoatMovement;
     public DialogueManager DialogueManager;
+    public CameraMoveTutorial cameraMoveTutorial;
 
     [Header("Camera")] 
     public Camera dialogCam;
@@ -24,7 +25,7 @@ public class ScriptManager : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueManager.dialogueOn == false) // temp
+        if (DialogueManager.dialogueOn == false && cameraMoveTutorial.cameraFinished == true) // temp, remove camerafinished condition at some point to preserve modulated code
         {
             reactivateBoat();
         }
