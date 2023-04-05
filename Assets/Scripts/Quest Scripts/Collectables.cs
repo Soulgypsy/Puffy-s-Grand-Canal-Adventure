@@ -21,9 +21,11 @@ public class Collectables : MonoBehaviour
     [Header("Hooking onto Boat")]
     private float distance;
     public float collectDist;
+    [SerializeField] private L2Manager manager;
 
     private void Awake()
     {
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<L2Manager>();
         selection = gameObject.GetComponent<SelectionManager>();
     }
     private void Update()
@@ -38,21 +40,22 @@ public class Collectables : MonoBehaviour
                 if (boat.GetComponentInChildren<CameraAim>().Stored == false)
                 {
                     ConnectToBoat(boat.GetComponent<Rigidbody>(), boat.gameObject);
-
-                    questScore = true;
-                    print(questScore);
                     boat.gameObject.GetComponentInChildren<CameraAim>().Stored = true;
                     boat.gameObject.GetComponentInChildren<CameraAim>().target = null;
+
+                    //Mission Progression
+                    if (manager != null)
+                        manager.progressStage();
                 }
                 else
                 {
-                    boat.gameObject.GetComponentInChildren<CameraAim>().target = null;
-
-                    questScore = true;
-                    print(questScore);
-
+                    boat.gameObject.GetComponentInChildren<CameraAim>().target = null; 
                     harpoon.DestroyHarpoon();
                     Invisble();
+
+                    //Mission Progression
+                    if (manager != null)
+                        manager.progressStage();
                 }
             }        
         }
@@ -96,6 +99,10 @@ public class Collectables : MonoBehaviour
 
         //Adding Hinge
         HingeMangement(boatRB);
+
+        
+
+
     }
 
     public void HingeMangement(Rigidbody boat)

@@ -23,6 +23,7 @@ TagManager:
   - Test
   - PullObject
   - Dialog Camera
+  - Manager
   layers:
   - Default
   - TransparentFX

@@ -6,10 +6,11 @@ public class QuestManager : MonoBehaviour
 {
     [SerializeField] Collectables questScore;
     public GameObject crates;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
         questScore = crates.GetComponent<Collectables>();
     }
 

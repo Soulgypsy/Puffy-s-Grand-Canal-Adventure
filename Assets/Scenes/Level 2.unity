@@ -29845,7 +29845,9 @@ MonoBehaviour:
   - {fileID: 1942573550}
   - {fileID: 1167363437}
   - {fileID: 1897466007}
+  cameraFinished: {fileID: 0}
   dialogueOn: 0
+  cameraMovement: 0
   continueDialogue: 32
 --- !u!4 &8699751346441491635
 Transform:

@@ -23,6 +23,8 @@ public class PaintQuest : MonoBehaviour
     [SerializeField]
     private KeyCode collectButton;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
