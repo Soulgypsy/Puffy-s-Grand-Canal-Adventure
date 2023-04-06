@@ -13,6 +13,9 @@ public class ScriptManager : MonoBehaviour
     public Camera dialogCam;
     private Camera mainCam;
 
+    [Header("Objects")]
+    public GameObject bg;
+
 
     private void Start()
     {
@@ -40,6 +43,7 @@ public class ScriptManager : MonoBehaviour
         BoatMovement.enabled = true;
         dialogCam.enabled = false;
         mainCam.enabled = true;
+        bg.SetActive(false);
         Time.timeScale = 1;
     }
 
