@@ -48,7 +48,6 @@ public class DialogueManager : MonoBehaviour
                 portrait[i].portrait.SetActive(true);
             }
         }
-        Time.timeScale = 0;
         Debug.Log("Starting Conversation with " + dialogue.name);
 
         nameText.text = dialogue.name;
@@ -99,7 +98,6 @@ public class DialogueManager : MonoBehaviour
         dialogueOn = false;
         cameraMovement = true;
 
-        Time.timeScale = 1;
         Debug.Log("End of conversation");
     }
 }

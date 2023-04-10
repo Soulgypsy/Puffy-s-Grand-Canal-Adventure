@@ -9,6 +9,7 @@ public class CameraMoveTutorial : MonoBehaviour
     private bool cameraReturn;
    [SerializeField] private bool timerEnabled;
     public Camera cameraTutorial;
+    public Camera cameraObjective;
     float timer;
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class CameraMoveTutorial : MonoBehaviour
         cameraReturn = false;
         timer = 0;
         timerEnabled = true;
+        cameraObjective.enabled = false;
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class CameraMoveTutorial : MonoBehaviour
         {
             if (timerEnabled == true)
             {
-                timer += Time.deltaTime;
+                timer += Time.unscaledDeltaTime;
                 
             }
             if (timerEnabled == false && Input.GetKeyDown("space"))// temp
@@ -40,13 +42,13 @@ public class CameraMoveTutorial : MonoBehaviour
 
             if (timer <= 0.5 && cameraReturn == false)
             {
-                cameraTutorial.transform.Rotate(0.2f, -0.5f, -0.05f);
-                cameraTutorial.transform.Translate(0, 0.15f, 0);
+                cameraTutorial.enabled = false;
+                cameraObjective.enabled = true;
             }
             else if (timer <= 0.5 && cameraReturn == true)
             {
-                cameraTutorial.transform.Rotate(-0.2f, 0.5f, 0.05f);
-                cameraTutorial.transform.Translate(0, -0.15f, 0);
+                cameraTutorial.enabled = true;
+                cameraObjective.enabled = false;
             }
 
             if (timer > 0.5 && cameraReturn == false)
