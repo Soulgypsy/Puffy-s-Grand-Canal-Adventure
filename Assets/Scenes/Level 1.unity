@@ -28218,6 +28218,7 @@ MonoBehaviour:
   portraitPuffy: {fileID: 6662622757461348060}
   portrait:
   - {fileID: 1952140548}
+  - {fileID: 1817867680}
   cameraFinished: {fileID: 536321531}
   dialogueOn: 0
   cameraMovement: 0
