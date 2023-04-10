@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMoveTutorial : MonoBehaviour
 {
-    public DialogueManager cameraMove;
+    public DialogueManagerLevelOne cameraMove;
     public bool cameraFinished;
     private bool cameraReturn;
    [SerializeField] private bool timerEnabled;

@@ -26,6 +26,7 @@ public class L2Trigger : MonoBehaviour
             if (isDialogTrigger)
             {
                 manager.CameraSwitch();
+                GetComponent<DialogueTrigger>().TriggerDialogue();
                 gameObject.SetActive(false);
             }
             else if (isNavTrigger)

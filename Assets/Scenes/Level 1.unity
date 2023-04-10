@@ -6135,7 +6135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ccb33b149720340adaa779e288db6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMove: {fileID: 6947691612118588604}
+  cameraMove: {fileID: 6947691612118588608}
   cameraFinished: 0
   timerEnabled: 0
   cameraTutorial: {fileID: 536321529}
@@ -28206,7 +28206,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6947691612118588607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f92509c78a5e2642b6205975e941aa7, type: 3}
   m_Name: 
@@ -28281,6 +28281,7 @@ GameObject:
   - component: {fileID: 6947691612118588605}
   - component: {fileID: 6947691612118588606}
   - component: {fileID: 6947691612118588604}
+  - component: {fileID: 6947691612118588608}
   m_Layer: 0
   m_Name: UiManager
   m_TagString: UIManagerMain
@@ -28288,6 +28289,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6947691612118588608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947691612118588607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69123bfa82e6c284bbabaa721549dccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1343370976565089254}
+  dialogueText: {fileID: 3115740559483793172}
+  box: {fileID: 6662622758647592240}
+  tint: {fileID: 6662622759335342824}
+  portraitPuffy: {fileID: 6662622757461348060}
+  portrait: []
+  cameraFinished: {fileID: 536321531}
+  dialogueOn: 0
+  cameraMovement: 0
+  continueDialogue: 32
 --- !u!23 &6958875378694787506
 MeshRenderer:
   m_ObjectHideFlags: 0
