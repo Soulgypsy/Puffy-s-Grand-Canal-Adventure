@@ -113,7 +113,7 @@ public class BoatMovement : MonoBehaviour
             }
             else
             {
-                if (optionsMenu.activeSelf == true) //Pause menu closes form options menu.
+                if (optionsMenu.activeSelf == true) //Pause menu closes from options menu.
                 {
                     optionsMenu.SetActive(false);
                     Time.timeScale = 1;

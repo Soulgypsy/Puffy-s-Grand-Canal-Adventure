@@ -26,7 +26,8 @@ public class ScriptManager : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueManager.dialogueOn == false && cameraMoveTutorial.cameraFinished == true) // temp, remove camerafinished condition at some point to preserve modulated code
+        
+       /* if (DialogueManager.dialogueOn == false && cameraMoveTutorial.cameraFinished == true) // temp, remove camerafinished condition at some point to preserve modulated code
         {
             reactivateBoat();
         }
@@ -35,17 +36,20 @@ public class ScriptManager : MonoBehaviour
             deactivateBoat();
         }
 
-        if (dialogueManagerLevelOne.dialogueOn == false && cameraMoveTutorial.cameraFinished == true) // temp, remove camerafinished condition at some point to preserve modulated code
+        //Level 1
+        if (dialogueManagerLevelOne.dialogueOn == false) // temp, remove camerafinished condition at some point to preserve modulated code
         {
             reactivateBoat();
+            Debug.Log("Test 1");
         }
         if (dialogueManagerLevelOne.dialogueOn == true)
         {
             deactivateBoat();
-        }
+            Debug.Log("test 2");
+        }*/
     }
 
-    private void reactivateBoat()
+    public void reactivateBoat()
     {
         BoatMovement.enabled = true;
         dialogCam.enabled = false;
@@ -53,7 +57,7 @@ public class ScriptManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void deactivateBoat()
+    public void deactivateBoat()
     {
         mainCam.enabled = false;
         dialogCam.enabled = true;

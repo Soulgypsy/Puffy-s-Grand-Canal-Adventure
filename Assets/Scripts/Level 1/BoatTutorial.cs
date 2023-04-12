@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class BoatTutorial : MonoBehaviour
 {
     [Header("GameObjects")]
-    public GameObject[] waypointsP1;
+    public GameObject waypointP1;
     public GameObject[] waypointsP2;
     public GameObject[] waypointsP3;
     public GameObject dialogueTrigger;
     public GameObject harpoonTrigger;
     public GameObject endBarrier;
-    private int currentWaypoint;
+    [SerializeField]private int currentWaypoint;
 
     [Header("Parts")]
     public bool part1Done;
@@ -24,14 +24,13 @@ public class BoatTutorial : MonoBehaviour
 
     public void Awake()
     {
-        waypointsP1[currentWaypoint].gameObject.SetActive(true);
+        waypointP1.SetActive(true);
     }
 
     public void changeWaypointP1()
     {
-        waypointsP1[currentWaypoint].gameObject.SetActive(false);
-        currentWaypoint = 0;
-        dialogueTrigger.gameObject.SetActive(true);
+        waypointP1.SetActive(false);
+        dialogueTrigger.SetActive(true);
     }
 
     public void changeWaypointP2()
@@ -46,7 +45,7 @@ public class BoatTutorial : MonoBehaviour
         else //End of part
         {
             waypointsP2[currentWaypoint - 1].gameObject.SetActive(false);
-            harpoonTrigger.SetActive(false);
+            harpoonTrigger.SetActive(true);
             part2Done = true;
         }
 
@@ -77,21 +76,22 @@ public class BoatTutorial : MonoBehaviour
         }
         else
         {
-            changeWaypointP2();
+            if (part2Done == false)
+            {
+                changeWaypointP2();
+            }
+            else
+            {
+                changeWaypointP3();
+            }         
         }
-        if (part2Done == false)
-        {
-            changeWaypointP2();
-        }
-        else
-        {
-            changeWaypointP3();
-        }
+
+        
     }
 
     public void equipHarpoon()
     {
-        Debug.Log("harpoon Equiped");
+        currentWaypoint = 0;
         waypointsP3[currentWaypoint].gameObject.SetActive(true);
     }
 

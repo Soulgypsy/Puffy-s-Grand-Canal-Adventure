@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class L2Manager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class L2Manager : MonoBehaviour
     public int stage1Count;
     public GameObject[] stage1;
     public GameObject stage1FinishMarker;
+    public GameObject exitBlocker;
 
     private void Awake()
     {
@@ -91,7 +93,21 @@ public class L2Manager : MonoBehaviour
                 stageNo++;
             }
         }
-        
+    }
 
+    public void clearCargo()
+    {
+        for (int i = 0; i < stage1.Length; i++)
+        {
+            stage1[i].GetComponent<Collectables>().Invisble();
+        }
+    }
+    public void clearBlocker()
+    {
+        exitBlocker.SetActive(false);
+    }
+    public void exitScene()
+    {
+        SceneManager.LoadScene("Level Select");
     }
 }

@@ -12,6 +12,7 @@ public class DialogueManagerLevelOne : MonoBehaviour
     public GameObject portraitPuffy;
     public DialogueTriggerLevelOne[] portrait;
     public CameraMoveTutorial cameraFinished;
+    public ScriptManager scriptManager;
     public bool dialogueOn;
     public bool cameraMovement;
 
@@ -38,6 +39,7 @@ public class DialogueManagerLevelOne : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         box.SetActive(true);
+        scriptManager.deactivateBoat();
         //tint.SetActive(true);
         //portraitPuffy.SetActive(true);
         dialogueOn = true;
@@ -96,7 +98,9 @@ public class DialogueManagerLevelOne : MonoBehaviour
         }
         portraitPuffy.SetActive(false);
         dialogueOn = false;
-        cameraMovement = true;
+        //cameraMovement = true;
+
+        scriptManager.reactivateBoat();
 
         Debug.Log("End of conversation");
     }

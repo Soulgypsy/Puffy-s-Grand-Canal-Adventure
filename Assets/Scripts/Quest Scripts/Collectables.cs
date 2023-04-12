@@ -113,7 +113,7 @@ public class Collectables : MonoBehaviour
         hinge.connectedBody = boat;
     }
 
-    private void Invisble()
+    public void Invisble()
     {
         gameObject.SetActive(false);
     }

@@ -24,6 +24,7 @@ public class TutorialTriggers : MonoBehaviour
         else if (isDialogueTrigger)
         {
             boatTutorial.dialogueTriggered();
+            other.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         }
         else
         {
