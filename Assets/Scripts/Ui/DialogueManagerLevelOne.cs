@@ -10,7 +10,7 @@ public class DialogueManagerLevelOne : MonoBehaviour
     public GameObject box;
     public GameObject tint;
     public GameObject portraitPuffy;
-    public DialogueTrigger[] portrait;
+    public DialogueTriggerLevelOne[] portrait;
     public CameraMoveTutorial cameraFinished;
     public bool dialogueOn;
     public bool cameraMovement;

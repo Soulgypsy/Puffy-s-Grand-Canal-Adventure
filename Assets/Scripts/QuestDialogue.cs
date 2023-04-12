@@ -14,7 +14,7 @@ public class QuestDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<DialogueTrigger>().TriggerDialogue();
+        GetComponent<DialogueTriggerLevelOne>().TriggerDialogue();
         questObject.SetActive(false);
     }
 }

@@ -9,6 +9,7 @@ public class BoatTutorial : MonoBehaviour
     public GameObject[] waypointsP1;
     public GameObject[] waypointsP2;
     public GameObject[] waypointsP3;
+    public GameObject dialogueTrigger;
     public GameObject harpoonTrigger;
     public GameObject endBarrier;
     private int currentWaypoint;
@@ -16,6 +17,7 @@ public class BoatTutorial : MonoBehaviour
     [Header("Parts")]
     public bool part1Done;
     public bool part2Done;
+    public bool part3Done;
 
     [Header("Boat Movement")]
     public EvironmentBoat environmentBoat;
@@ -27,21 +29,9 @@ public class BoatTutorial : MonoBehaviour
 
     public void changeWaypointP1()
     {
-        currentWaypoint = currentWaypoint + 1;
-
-        if (currentWaypoint != waypointsP1.Length)
-        {
-            waypointsP1[currentWaypoint - 1].gameObject.SetActive(false);
-            waypointsP1[currentWaypoint].gameObject.SetActive(true);
-        }
-        else //End of part
-        {
-            waypointsP1[currentWaypoint - 1].gameObject.SetActive(false);
-            part1Done = true;
-            GetComponent<DialogueTrigger>().TriggerDialogue();
-            currentWaypoint = 0;
-        }
-
+        waypointsP1[currentWaypoint].gameObject.SetActive(false);
+        currentWaypoint = 0;
+        dialogueTrigger.gameObject.SetActive(true);
     }
 
     public void changeWaypointP2()
@@ -56,8 +46,8 @@ public class BoatTutorial : MonoBehaviour
         else //End of part
         {
             waypointsP2[currentWaypoint - 1].gameObject.SetActive(false);
-            endBarrier.SetActive(false);
-            part1Done = true;
+            harpoonTrigger.SetActive(false);
+            part2Done = true;
         }
 
     }
@@ -75,7 +65,7 @@ public class BoatTutorial : MonoBehaviour
             {
                 waypointsP3[currentWaypoint - 1].gameObject.SetActive(false);
                 endBarrier.SetActive(false);
-                part2Done = true;
+                part3Done = true;
             }
     }
 
@@ -102,7 +92,7 @@ public class BoatTutorial : MonoBehaviour
     public void equipHarpoon()
     {
         Debug.Log("harpoon Equiped");
-        waypointsP2[currentWaypoint].gameObject.SetActive(true);
+        waypointsP3[currentWaypoint].gameObject.SetActive(true);
     }
 
     public void exitTrigger()
@@ -114,5 +104,12 @@ public class BoatTutorial : MonoBehaviour
     public void moveBoat()
     {
         environmentBoat.isMoving = true;
+    }
+    public void dialogueTriggered()
+    {
+        GetComponent<DialogueTriggerLevelOne>().TriggerDialogue();
+        dialogueTrigger.gameObject.SetActive(false);
+        waypointsP2[currentWaypoint].gameObject.SetActive(true);
+        part1Done = true;
     }
 }

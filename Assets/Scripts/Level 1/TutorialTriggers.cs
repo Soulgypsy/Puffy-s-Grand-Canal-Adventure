@@ -8,6 +8,7 @@ public class TutorialTriggers : MonoBehaviour
     public bool isHarpoonTrigger;
     public bool isExitTrigger;
     public bool isFirstTrigger;
+    public bool isDialogueTrigger;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -19,6 +20,10 @@ public class TutorialTriggers : MonoBehaviour
         else if (isExitTrigger)
         {
             boatTutorial.exitTrigger();
+        }
+        else if (isDialogueTrigger)
+        {
+            boatTutorial.dialogueTriggered();
         }
         else
         {
