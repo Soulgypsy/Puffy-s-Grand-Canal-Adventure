@@ -2530,6 +2530,7 @@ MonoBehaviour:
   isHarpoonTrigger: 1
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &204807730
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3369,6 +3370,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &308397565
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4302,6 +4304,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 1
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!65 &399175235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6618,6 +6621,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &602759005
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7429,6 +7433,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &688769563
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9030,7 +9035,7 @@ GameObject:
   - component: {fileID: 868787633}
   - component: {fileID: 868787632}
   m_Layer: 0
-  m_Name: ObjectiveMarker (1)
+  m_Name: DialogueTriggerWaypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9080,6 +9085,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 1
 --- !u!136 &868787634
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10321,6 +10327,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 1
+  isDialogueTrigger: 0
 --- !u!136 &1022727413
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10571,6 +10578,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &1061181163
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15008,6 +15016,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &1592974293
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15355,6 +15364,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &1622349212
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16558,7 +16568,6 @@ GameObject:
   - component: {fileID: 1817867678}
   - component: {fileID: 1817867677}
   - component: {fileID: 1817867679}
-  - component: {fileID: 1817867680}
   - component: {fileID: 1817867681}
   m_Layer: 0
   m_Name: Tutorial Manager
@@ -16581,7 +16590,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypointsP1:
   - {fileID: 1699084286363163094}
-  - {fileID: 868787630}
   waypointsP2:
   - {fileID: 2074924377}
   - {fileID: 308397561}
@@ -16593,10 +16601,12 @@ MonoBehaviour:
   - {fileID: 602759001}
   - {fileID: 1622349208}
   - {fileID: 1061181159}
+  dialogueTrigger: {fileID: 868787630}
   harpoonTrigger: {fileID: 204807727}
   endBarrier: {fileID: 226491227}
   part1Done: 0
   part2Done: 0
+  part3Done: 0
   environmentBoat: {fileID: 3469287838117430529}
 --- !u!4 &1817867678
 Transform:
@@ -16627,29 +16637,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoatMovement: {fileID: 1583272022}
   DialogueManager: {fileID: 6947691612118588604}
+  dialogueManagerLevelOne: {fileID: 6947691612118588608}
   cameraMoveTutorial: {fileID: 536321531}
   dialogCam: {fileID: 536321529}
---- !u!114 &1817867680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817867676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 461f78769ad5567429568ac9a6cab2a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Finnieston Crane
-    sentences:
-    - Nicely done, my young friend! You seem to be quite good for a first timer!
-    - "Now, you\u2019re not completely ready to sail the seven seas just yet!"
-    - "Along the river, you should be able to find a hook you\u2019ll need for your
-      journey. Get that, and I\u2019m sure you\u2019ll be prepared to head out!"
-  portrait: {fileID: 166191148}
-  portraitCheck: 0
 --- !u!114 &1817867681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18042,7 +18032,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1952140546}
-  - component: {fileID: 1952140548}
   - component: {fileID: 1952140549}
   - component: {fileID: 1952140547}
   m_Layer: 3
@@ -18080,27 +18069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questObject: {fileID: 1952140545}
---- !u!114 &1952140548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952140545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 461f78769ad5567429568ac9a6cab2a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Finnieston Crane
-    sentences:
-    - Why hello, little Puffer boat!
-    - "I understand that this is your first time out on the water, so why don\u2019t
-      you go ahead and make sure everything\u2019s in working order!"
-    - Try to reach the end of the shipyard there, and then head on back to me!
-  portrait: {fileID: 678102743}
-  portraitCheck: 0
 --- !u!114 &1952140549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19298,6 +19266,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &2056419022
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19621,6 +19590,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &2074924381
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20954,6 +20924,10 @@ PrefabInstance:
       propertyPath: optionsMenu
       value: 
       objectReference: {fileID: 6662622759211484431}
+    - target: {fileID: 5858674482543184804, guid: 5a93a3d803ba1974aad7799f82275614, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a93a3d803ba1974aad7799f82275614, type: 3}
 --- !u!4 &1105131421354508783
@@ -22451,6 +22425,7 @@ MonoBehaviour:
   isHarpoonTrigger: 0
   isExitTrigger: 0
   isFirstTrigger: 0
+  isDialogueTrigger: 0
 --- !u!136 &3130097475182955723
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28261,8 +28236,8 @@ MonoBehaviour:
   tint: {fileID: 6662622759335342824}
   portraitPuffy: {fileID: 6662622757461348060}
   portrait:
-  - {fileID: 1952140548}
-  - {fileID: 1817867680}
+  - {fileID: 0}
+  - {fileID: 0}
   dialogueOn: 0
   cameraMovement: 0
   continueDialogue: 32
@@ -28350,8 +28325,8 @@ MonoBehaviour:
   tint: {fileID: 6662622759335342824}
   portraitPuffy: {fileID: 6662622757461348060}
   portrait:
-  - {fileID: 1952140548}
-  - {fileID: 1817867680}
+  - {fileID: 1952140549}
+  - {fileID: 1817867681}
   cameraFinished: {fileID: 536321531}
   dialogueOn: 0
   cameraMovement: 0
@@ -29010,8 +28985,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6947691612118588604}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 6947691612118588608}
+        m_TargetAssemblyTypeName: DialogueManagerLevelOne, Assembly-CSharp
         m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
