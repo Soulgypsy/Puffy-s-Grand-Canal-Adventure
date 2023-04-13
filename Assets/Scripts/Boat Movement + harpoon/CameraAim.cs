@@ -12,7 +12,7 @@ public class CameraAim : MonoBehaviour
     public float rayDistance;
     public LayerMask layer;
     public SelectionManager currentTarget;
-    private UiManager UiManager;
+    [SerializeField]private UiManager UiManager;
 
     [Header("Firing")]
     public GameObject harpoonPrefab;
