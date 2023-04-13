@@ -10,12 +10,16 @@ public class L2Trigger : MonoBehaviour
     public bool isQuest2Finish;
     public bool isExit;
     public bool isLast;
+    public bool isPromt;
 
     [Header("Manager")]
     private L2Manager manager;
 
     [Header("Nav Requirment")]
     public GameObject nextNavMarker;
+
+    [Header("Promt")]
+    public GameObject promt;
 
     public void Awake()
     {
@@ -52,6 +56,16 @@ public class L2Trigger : MonoBehaviour
             {
                 manager.exitScene();
             }
+            else if (isPromt)
+            {
+                if (promt.activeSelf == false)
+                    promt.SetActive(true);
+                else if (promt.activeSelf == true)
+                    promt.SetActive(false);
+
+                gameObject.SetActive(false);
+            }
+
             else
                 Debug.Log("No type set");
         }       
