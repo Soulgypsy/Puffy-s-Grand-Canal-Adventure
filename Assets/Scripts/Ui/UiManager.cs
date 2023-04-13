@@ -8,14 +8,7 @@ using TMPro;
 
 public class UiManager : MonoBehaviour
 {
-    public GameObject questMenu;
-    [SerializeField] Animator QuestMenuAnimator;
-    [SerializeField] Collectables[] questScore;
-    [SerializeField] Sprite[] questIconsArray;
-    [SerializeField] Image[] questIconsImage;
-    [SerializeField] public Text countdownRace;
-    public GameObject[] crates;
-    public bool deactivated;
+    
 
     [Header("Cursor")]
     public Texture2D defaultCursor;
@@ -25,33 +18,7 @@ public class UiManager : MonoBehaviour
     public GameObject counter;
     public TextMeshProUGUI cargoText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (deactivated == false)
-        {
-            for (int i = 0; i < crates.Length; i++)
-            {
-                questScore[i] = crates[i].GetComponent<Collectables>();
-            }
-        }
 
-    }
-
-    void Update()
-    {
-
-        if (deactivated == false)
-        {
-            for (int i = 0; i < crates.Length; i++)
-            {
-                if (questScore[i].questScore == true)
-                {
-                    questIconsImage[i].sprite = questIconsArray[1];
-                }
-            }
-        }
-    }
 
 
     public void changeToAimCursor()

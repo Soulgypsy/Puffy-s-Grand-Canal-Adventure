@@ -74,7 +74,7 @@ public class L2Manager : MonoBehaviour
         }
     }
 
-    public void spawnStageOneObjectives()
+    public void spawnStageOneObjectives()//Spawing cargo
     {
         for(int i = 0; i < stage1.Length; i++)
         {

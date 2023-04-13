@@ -39,7 +39,7 @@ public class PurpleBoatRacing : MonoBehaviour
     public UiManager raceUI;
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         // raceGoal.SetActive(false);
         boatWaypointActivated = false;
@@ -222,5 +222,5 @@ public class PurpleBoatRacing : MonoBehaviour
             other.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
             reachedPoint = true;
         }
-    }
+    }*/
 }
