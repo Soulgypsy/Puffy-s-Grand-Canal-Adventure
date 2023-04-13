@@ -19,6 +19,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private KeyCode continueDialogue;
 
+    [Header("Scripts")]
+    public L2Manager l2Manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,8 @@ public class DialogueManager : MonoBehaviour
         box.SetActive(true);
         //tint.SetActive(true);
         //portraitPuffy.SetActive(true);
+
+
         dialogueOn = true;
         for (int i = 0; i < portrait.Length; i++)
         {
@@ -86,8 +91,10 @@ public class DialogueManager : MonoBehaviour
                 portrait[i].portrait.SetActive(false);
         }
         portraitPuffy.SetActive(false);
-        dialogueOn = false;
-        cameraMovement = true;
+        //dialogueOn = false;
+        //cameraMovement = true;
+
+        l2Manager.exitDialog();
 
         Debug.Log("End of conversation");
     }

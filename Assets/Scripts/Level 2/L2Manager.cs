@@ -16,6 +16,7 @@ public class L2Manager : MonoBehaviour
     public GameObject[] stage1;
     public GameObject stage1FinishMarker;
     public GameObject exitBlocker;
+    public UiManager ui;
 
     private void Awake()
     {
@@ -25,12 +26,12 @@ public class L2Manager : MonoBehaviour
 
     private void Update()
     {
-        if (dialogOn && Input.GetKeyDown("space")) // Temp
+       /* if (dialogOn && Input.GetKeyDown("space")) // Temp
         {
             switchToMainCam();
             nextStage();
             dialogOn = false;
-        }
+        }*/
     }
 
     public void CameraSwitch()
@@ -79,6 +80,8 @@ public class L2Manager : MonoBehaviour
         {
             stage1[i].SetActive(true);
         }
+
+        ui.counter.SetActive(true);
     }
 
     public void progressStage()
@@ -86,6 +89,7 @@ public class L2Manager : MonoBehaviour
         if (stageNo == 0)
         {
             stage1Count++;
+            ui.cargoCounterChange(stage1Count);
 
             if (stage1Count == 3)
             {
@@ -97,6 +101,7 @@ public class L2Manager : MonoBehaviour
 
     public void clearCargo()
     {
+        ui.counter.SetActive(false);
         for (int i = 0; i < stage1.Length; i++)
         {
             stage1[i].GetComponent<Collectables>().Invisble();
@@ -109,5 +114,10 @@ public class L2Manager : MonoBehaviour
     public void exitScene()
     {
         SceneManager.LoadScene("Level Select");
+    }
+    public void exitDialog()
+    {
+        switchToMainCam();
+        nextStage();
     }
 }

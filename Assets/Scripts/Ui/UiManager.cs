@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class UiManager : MonoBehaviour
@@ -19,6 +20,10 @@ public class UiManager : MonoBehaviour
     [Header("Cursor")]
     public Texture2D defaultCursor;
     public Texture2D aimCursor;
+
+    [Header("Lv 2 - Cargo")]
+    public GameObject counter;
+    public TextMeshProUGUI cargoText;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +61,11 @@ public class UiManager : MonoBehaviour
     public void changeToDefaultCursor()
     {
         Cursor.SetCursor(defaultCursor, new Vector2(0, 0), CursorMode.Auto);
+    }
+
+    public void cargoCounterChange(int count)
+    {
+        cargoText.text = count + "/3";
     }
 }
 

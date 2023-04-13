@@ -46,6 +46,7 @@ public class L2Trigger : MonoBehaviour
             else if (isLast)
             {
                 manager.clearBlocker();
+                gameObject.SetActive(false);
             }
             else if (isExit)
             {

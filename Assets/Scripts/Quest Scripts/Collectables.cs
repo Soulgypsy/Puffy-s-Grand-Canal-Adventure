@@ -22,6 +22,7 @@ public class Collectables : MonoBehaviour
     private float distance;
     public float collectDist;
     [SerializeField] private L2Manager manager;
+    public GameObject ring;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class Collectables : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, boat.transform.position, speed * Time.deltaTime);
             distance = Vector3.Distance(boat.transform.position, transform.position);
+            ring.SetActive(false);       
 
             if (distance < collectDist && hooked == true)
             {
