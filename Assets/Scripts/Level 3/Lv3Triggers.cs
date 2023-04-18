@@ -13,6 +13,7 @@ public class Lv3Triggers : MonoBehaviour
 
     [Header("Race")]
     public GameObject nextTrigger;
+
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Lv3Manager>();
@@ -28,7 +29,8 @@ public class Lv3Triggers : MonoBehaviour
             }
             else if (isDialogTrigger)
             {
-                manager.StartRaceDialog();
+                GetComponent<DialogueTriggerLevelThree>().TriggerDialogue();
+                gameObject.SetActive(false);
             }
         }
         

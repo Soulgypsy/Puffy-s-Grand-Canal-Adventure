@@ -6,6 +6,7 @@ public class RaceMovement : MonoBehaviour
     public Transform goal;
     public Transform[] checkPoints;
     public int currentTarget;
+    public Lv3Manager isRacing;
 
     private void Start()
     {
@@ -17,7 +18,6 @@ public class RaceMovement : MonoBehaviour
     public void Update()
     {
         float distance = Vector3.Distance(goal.position, transform.position);
-        //print(distance);
 
         if (distance < 5f) //Distance between boat and target.
         {
@@ -25,6 +25,6 @@ public class RaceMovement : MonoBehaviour
             goal.position = checkPoints[currentTarget].position;
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.destination = goal.position;
-        }
+        }  
     }
 }

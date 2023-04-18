@@ -8,8 +8,6 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public GameObject box;
-    public GameObject tint;
-    public GameObject portraitPuffy;
     public DialogueTrigger[] portrait;
     public bool dialogueOn;
     public bool cameraMovement;
@@ -32,8 +30,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         box.SetActive(true);
-        //tint.SetActive(true);
-        //portraitPuffy.SetActive(true);
+
 
 
         dialogueOn = true;
@@ -63,7 +60,6 @@ public class DialogueManager : MonoBehaviour
             {
                 EndDialogue();
                 box.SetActive(false);
-                tint.SetActive(false);
                 return;
             }
 
@@ -90,7 +86,6 @@ public class DialogueManager : MonoBehaviour
         {
                 portrait[i].portrait.SetActive(false);
         }
-        portraitPuffy.SetActive(false);
         //dialogueOn = false;
         //cameraMovement = true;
 

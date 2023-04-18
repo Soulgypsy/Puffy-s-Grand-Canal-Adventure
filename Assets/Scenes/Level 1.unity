@@ -6868,7 +6868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &678102744
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27368,8 +27368,6 @@ MonoBehaviour:
   nameText: {fileID: 1343370976565089254}
   dialogueText: {fileID: 3115740559483793172}
   box: {fileID: 6662622758647592240}
-  tint: {fileID: 6662622759335342824}
-  portraitPuffy: {fileID: 6662622757461348060}
   portrait:
   - {fileID: 0}
   - {fileID: 0}
