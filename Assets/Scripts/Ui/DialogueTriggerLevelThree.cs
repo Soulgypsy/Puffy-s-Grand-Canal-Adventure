@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTriggerLevelThree : MonoBehaviour
 {
     public Dialogue dialogue;
-    public GameObject portrait;
+    //public GameObject portrait;
     public bool portraitCheck;
 
     public void TriggerDialogue()
