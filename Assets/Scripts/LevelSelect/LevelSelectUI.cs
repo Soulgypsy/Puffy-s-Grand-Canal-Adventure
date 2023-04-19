@@ -58,12 +58,12 @@ public class LevelSelectUI : MonoBehaviour
                 currentPlayButton = startButtons[0];
                 break;
 
-            case 2:
+            case 4:
                 Debug.Log("Level 2");
                 startButtons[1].SetActive(true);
                 break;
 
-            case 4:
+            case 8:
                 Debug.Log("Level 3");
                 startButtons[2].SetActive(true);
                 break;
