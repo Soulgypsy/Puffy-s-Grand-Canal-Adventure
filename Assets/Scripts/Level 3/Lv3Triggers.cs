@@ -9,6 +9,7 @@ public class Lv3Triggers : MonoBehaviour
 
     [Header("Type")]
     public bool isRaceTrigger;
+    public bool islast;
     public bool isDialogTrigger;
 
     [Header("Race")]
@@ -24,8 +25,15 @@ public class Lv3Triggers : MonoBehaviour
         {
             if (isRaceTrigger)
             {
-                nextTrigger.SetActive(true);
                 gameObject.SetActive(false);
+                if (islast)
+                {
+                    manager.PlayerBoatFinished();
+                }
+                else
+                {
+                    nextTrigger.SetActive(true);              
+                }
             }
             else if (isDialogTrigger)
             {
