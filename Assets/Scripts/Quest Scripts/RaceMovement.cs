@@ -31,6 +31,15 @@ public class RaceMovement : MonoBehaviour
             {
                 Debug.Log("Reached end of race");
                 isDone = true;
+                if(isRacing.playerBoatwon == false)
+                {
+                    hasWon = true;
+                    GetComponent<DialogueTriggerLevelThree>().TriggerDialogue();
+                }
+                else
+                {
+                    hasFinished = true;
+                }
             }
             else
             {
@@ -40,5 +49,17 @@ public class RaceMovement : MonoBehaviour
             }
             
         }  
+
+        if (isDone == true)
+        {
+            if(hasWon == true)
+            {
+                goal.position = checkPoints[0].position;
+                NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                agent.destination = goal.position;
+                isDone = false;
+                hasWon = false;
+            }
+        }
     }
 }

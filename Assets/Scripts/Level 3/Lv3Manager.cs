@@ -36,7 +36,15 @@ public class Lv3Manager : MonoBehaviour
     public void CameraSwitch()
     {
         mainCam.enabled = false;
-        dialogCam.enabled = true;
+        if(raceBoat.hasWon == false)
+        {
+            dialogCam.enabled = true;
+        }
+        else
+        {
+            raceEndCamera.enabled = true;
+        }
+        
         Time.timeScale = 0;
 
         dialogOn = true;
@@ -55,6 +63,7 @@ public class Lv3Manager : MonoBehaviour
     {
         mainCam.enabled = true;
         dialogCam.enabled = false;
+        raceEndCamera.enabled = false;
         Time.timeScale = 1;
         dialogOn = false;
     }
@@ -78,14 +87,6 @@ public class Lv3Manager : MonoBehaviour
         else if(raceBoatWon == true) // Player lost.
         {
             Debug.Log("Player Lost");
-        }
-    }
-
-    public void RaceBoatWon()
-    {
-        if (playerBoatwon == false)
-        {
-            raceBoatWon = true;
         }
     }
 }

@@ -35,12 +35,19 @@ public class Lv3Triggers : MonoBehaviour
                     nextTrigger.SetActive(true);              
                 }
             }
-            else if (isDialogTrigger)
+            if (isDialogTrigger)
             {
                 GetComponent<DialogueTriggerLevelThree>().TriggerDialogue();
                 gameObject.SetActive(false);
             }
         }
-        
+
+        if(other.tag == "RaceAgent")
+        {
+            if (isDialogTrigger)
+            {
+                other.GetComponent<DialogueTriggerLevelThree>().TriggerDialogue();
+            }
+        }
     }
 }
