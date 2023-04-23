@@ -64,8 +64,6 @@ public class RaceMovement : MonoBehaviour
 
         float distance = Vector3.Distance(goal.position, transform.position);
 
-        print(distance);
-
         if (startCounter == false)
         {
             if (distance < 5f && isDone == false) //Distance between boat and target.
