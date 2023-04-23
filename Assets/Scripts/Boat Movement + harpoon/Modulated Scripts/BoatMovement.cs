@@ -30,6 +30,9 @@ public class BoatMovement : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject optionsMenu;
 
+    [Header("Race Check")]
+    public RaceMovement isRacing;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -43,31 +46,34 @@ public class BoatMovement : MonoBehaviour
 
     private void MyInput()
     {
-        if (Input.GetKey(forwardKey))
+        if (isRacing.startCounter == false)
         {
-            moveForward = true;
-            boatMovementAudio.Play();
+            if (Input.GetKey(forwardKey))
+            {
+                moveForward = true;
+                boatMovementAudio.Play();
+            }
+            else
+            {
+                moveForward = false;
+                boatMovementAudio.Stop();
+            }
+
+            if (Input.GetKey(backKey))
+                moveBackward = true;
+            else
+                moveBackward = false;
+
+
+            if (Input.GetKey(leftKey))
+                turnLeft = true;
+            else
+                turnLeft = false;
+            if (Input.GetKey(rightKey))
+                turnRight = true;
+            else
+                turnRight = false;
         }
-        else
-        {
-            moveForward = false;
-            boatMovementAudio.Stop();
-        }
-
-        if (Input.GetKey(backKey))
-            moveBackward = true;
-        else
-            moveBackward = false;
-
-
-        if (Input.GetKey(leftKey))
-            turnLeft = true;
-        else
-            turnLeft = false;
-        if (Input.GetKey(rightKey))
-            turnRight = true;
-        else
-            turnRight = false;
 
     }
 
@@ -86,6 +92,11 @@ public class BoatMovement : MonoBehaviour
         if (moveBackward)
         {
             _rb.AddForce(moveSpeed * -transform.forward, ForceMode.Acceleration);
+        }
+
+        if (isRacing.startCounter == true)
+        {
+            _rb.velocity = Vector3.zero;
         }
     }
 

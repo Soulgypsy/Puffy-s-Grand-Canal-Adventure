@@ -18,8 +18,8 @@ public class UiManager : MonoBehaviour
     public GameObject counter;
     public TextMeshProUGUI cargoText;
 
-
-
+    [Header("Lv 3 - Race")]
+    public Text countdownRace;
 
     public void changeToAimCursor()
     {
