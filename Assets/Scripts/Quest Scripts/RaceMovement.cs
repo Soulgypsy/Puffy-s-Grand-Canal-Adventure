@@ -36,7 +36,6 @@ public class RaceMovement : MonoBehaviour
 
     public void Update()
     {
-
         if (startCounter == true)
         {
             raceUI.countdownRace.enabled = true;
@@ -85,12 +84,12 @@ public class RaceMovement : MonoBehaviour
                         hasFinished = true;
                     }
                 }
-            }
-            else
-            {
-                goal.position = checkPoints[currentTarget].position;
-                NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                agent.destination = goal.position;
+                else
+                {
+                    goal.position = checkPoints[currentTarget].position;
+                    NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                    agent.destination = goal.position;
+                }
             }
 
 
