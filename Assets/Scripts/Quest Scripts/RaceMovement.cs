@@ -5,7 +5,8 @@ public class RaceMovement : MonoBehaviour
 {
     public Transform goal;
     public GameObject dialogueBoat;
-    public GameObject speedBoat;
+    public GameObject speedBoatBody;
+    public Vector3 startPos;
     public Transform[] checkPoints;
     public int currentTarget;
     public Lv3Manager isRacing;
@@ -15,6 +16,7 @@ public class RaceMovement : MonoBehaviour
     public bool navStart;
     public float countdown = 5f;
     public int countdownInt;
+    public int difficultyCount;
     public UiManager raceUI;
 
     [Header("Finished")]
@@ -24,11 +26,12 @@ public class RaceMovement : MonoBehaviour
     private void Start()
     {
         navStart = false;
-        speedBoat.SetActive(true);
+        speedBoatBody.SetActive(true);
         dialogueBoat.SetActive(false);
+        difficultyCount = 0;
 
-        gameObject.transform.position = new Vector3(529, -18, -59);
-        gameObject.transform.eulerAngles = new Vector3(0, 228, 0);
+        transform.position = startPos;
+        transform.eulerAngles = new Vector3(0, 228, 0);
         transformPlayer.position = new Vector3(521, -16, -37);
         transformPlayer.eulerAngles = new Vector3(0, -132, 0);
         startCounter = true;
@@ -38,12 +41,16 @@ public class RaceMovement : MonoBehaviour
     {
         if (startCounter == true)
         {
+            speedBoatBody.SetActive(true);
             raceUI.countdownRace.enabled = true;
             if (countdown >= 0)
-
+            {
                 countdown -= Time.deltaTime;
-            countdownInt = Mathf.RoundToInt(countdown);
-            raceUI.countdownRace.text = "Race starts in... " + countdownInt.ToString() + "!";
+                countdownInt = Mathf.RoundToInt(countdown);
+                raceUI.countdownRace.text = "Race starts in... " + countdownInt.ToString() + "!";
+            }
+
+                
             if (countdown <= 0)
             {
                 startCounter = false;
@@ -86,9 +93,33 @@ public class RaceMovement : MonoBehaviour
                 }
                 else
                 {
-                    goal.position = checkPoints[currentTarget].position;
-                    NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                    agent.destination = goal.position;
+                    if(difficultyCount == 0)
+                    {
+                        goal.position = checkPoints[currentTarget].position;
+                        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                        agent.destination = goal.position;
+                    }
+                    else if(difficultyCount == 1)
+                    {
+                        goal.position = checkPoints[currentTarget].position;
+                        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                        agent.speed = agent.speed / 1.25f;
+                        agent.destination = goal.position;
+                    }
+                    else if (difficultyCount == 2)
+                    {
+                        goal.position = checkPoints[currentTarget].position;
+                        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                        agent.speed = agent.speed / 1.5f;
+                        agent.destination = goal.position;
+                    }
+                    else if (difficultyCount == 3)
+                    {
+                        goal.position = checkPoints[currentTarget].position;
+                        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                        agent.speed = agent.speed / 1.75f;
+                        agent.destination = goal.position;
+                    }
                 }
             }
 
@@ -102,10 +133,11 @@ public class RaceMovement : MonoBehaviour
                         GetNavAgent();
                     }
 
-                    gameObject.transform.position = new Vector3(529, -18, -59);
-                    gameObject.transform.eulerAngles = new Vector3(0, 228, 0);
-                    transformPlayer.position = new Vector3(521, -16, -37);
-                    transformPlayer.eulerAngles = new Vector3(0, -132, 0);
+                    if (difficultyCount != 3)
+                    {
+                        difficultyCount += 1;
+                    }
+                    
                     startCounter = true;
                     isDone = false;
                     hasWon = false;
@@ -116,8 +148,37 @@ public class RaceMovement : MonoBehaviour
 
     public void GetNavAgent()
     {
-        goal.position = checkPoints[0].position;
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        transform.position = startPos;
+        transform.eulerAngles = new Vector3(0, 228, 0);
+        transformPlayer.position = new Vector3(521, -16, -37);
+        transformPlayer.eulerAngles = new Vector3(0, -132, 0);
+
+        if (difficultyCount == 0)
+        {
+            goal.position = checkPoints[0].position;
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.destination = goal.position;
+        }
+        else if (difficultyCount == 1)
+        {
+            goal.position = checkPoints[0].position;
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.speed = agent.speed / 1.25f;
+            agent.destination = goal.position;
+        }
+        else if (difficultyCount == 2)
+        {
+            goal.position = checkPoints[0].position;
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.speed = agent.speed / 1.5f;
+            agent.destination = goal.position;
+        }
+        else if (difficultyCount == 3)
+        {
+            goal.position = checkPoints[0].position;
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.speed = agent.speed / 1.75f;
+            agent.destination = goal.position;
+        }
     }
 }
