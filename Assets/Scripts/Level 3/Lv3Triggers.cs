@@ -14,6 +14,7 @@ public class Lv3Triggers : MonoBehaviour
 
     [Header("Race")]
     public GameObject nextTrigger;
+    public RaceMovement raceCheck;
 
     private void Start()
     {
@@ -23,16 +24,19 @@ public class Lv3Triggers : MonoBehaviour
     {
         if (other.tag == "PlayerBoat")
         {
-            if (isRaceTrigger)
+            if (raceCheck.isActiveAndEnabled == true)
             {
-                gameObject.SetActive(false);
-                if (islast)
+                if (isRaceTrigger)
                 {
-                    manager.PlayerBoatFinished();
-                }
-                else
-                {
-                    nextTrigger.SetActive(true);              
+                    gameObject.SetActive(false);
+                    if (islast)
+                    {
+                        manager.PlayerBoatFinished();
+                    }
+                    else
+                    {
+                        nextTrigger.SetActive(true);
+                    }
                 }
             }
             if (isDialogTrigger)
@@ -40,6 +44,7 @@ public class Lv3Triggers : MonoBehaviour
                 GetComponent<DialogueTriggerLevelThree>().TriggerDialogue();
                 gameObject.SetActive(false);
             }
+
         }
 
         if(other.tag == "RaceAgent")
