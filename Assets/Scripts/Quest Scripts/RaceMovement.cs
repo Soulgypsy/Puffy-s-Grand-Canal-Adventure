@@ -148,8 +148,10 @@ public class RaceMovement : MonoBehaviour
 
     public void GetNavAgent()
     {
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
         transform.position = startPos;
         transform.eulerAngles = new Vector3(0, 228, 0);
+        gameObject.GetComponent<NavMeshAgent>().enabled = true;
         transformPlayer.position = new Vector3(521, -16, -37);
         transformPlayer.eulerAngles = new Vector3(0, -132, 0);
 
