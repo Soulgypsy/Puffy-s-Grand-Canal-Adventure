@@ -19,7 +19,6 @@ public class BoatMovementOld : MonoBehaviour
     private bool turnRight = false;
 
     public bool wonRace = false;
-    public PurpleBoatRacing race;
 
     //public GameObject[] rubble;
     //public bool rubbleTriggered = false;
@@ -37,6 +36,8 @@ public class BoatMovementOld : MonoBehaviour
     [Header("Pause Menu")]
     public GameObject pauseMenu;
     public GameObject optionsMenu;
+
+    public PurpleBoatRacing race;
 
     private void Awake()
     {
