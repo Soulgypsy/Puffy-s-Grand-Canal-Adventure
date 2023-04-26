@@ -63,7 +63,7 @@ public class LevelSelectUI : MonoBehaviour
                 startButtons[1].SetActive(true);
                 break;
 
-            case 8:
+            case 11:
                 Debug.Log("Level 3");
                 startButtons[2].SetActive(true);
                 break;

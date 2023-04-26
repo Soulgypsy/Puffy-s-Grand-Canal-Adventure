@@ -41,7 +41,7 @@ public class LevelSelectBoatMovement : MonoBehaviour
                     transform.position = Vector3.MoveTowards(transform.position, waypoints[tempTarget].position, speed * Time.deltaTime);
 
                     Vector3 direction = transform.position - waypoints[tempTarget].position;
-                    transform.up = direction;
+                    transform.right = -direction;
 
                 }
                 else
@@ -71,7 +71,7 @@ public class LevelSelectBoatMovement : MonoBehaviour
                     transform.position = Vector3.MoveTowards(transform.position, waypoints[tempTarget].position, speed * Time.deltaTime);
 
                     Vector3 direction = transform.position - waypoints[tempTarget].position;
-                    transform.up = direction;
+                    transform.right = -direction;
                 }
                 else
                 {
