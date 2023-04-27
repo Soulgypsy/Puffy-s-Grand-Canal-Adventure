@@ -21,6 +21,9 @@ public class L2Trigger : MonoBehaviour
     [Header("Promt")]
     public GameObject promt;
 
+    [Header("Hat")]
+    public GameObject puffyHat;
+
     public void Awake()
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<L2Manager>();
@@ -36,6 +39,7 @@ public class L2Trigger : MonoBehaviour
                 {
                     manager.clearCargo();
                     nextNavMarker.SetActive(true);
+                    puffyHat.SetActive(true);
                 }
 
                 manager.CameraSwitch();

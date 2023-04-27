@@ -19145,7 +19145,7 @@ GameObject:
   - component: {fileID: 843640269851925511}
   - component: {fileID: 4331035461975937954}
   - component: {fileID: 2017078853027161960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Final_PuffyTheBoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22213,7 +22213,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 00772f758a9399c478349e0873b4bc00, type: 3}
-    m_FontSize: 60
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
