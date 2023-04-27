@@ -48,16 +48,6 @@ public class Lv3Manager : MonoBehaviour
         Time.timeScale = 0;
 
         dialogOn = true;
-
-        if (stageNo == 0) //Place for activating different dialogs
-        {
-            Debug.Log("Dialog One");
-        }
-        else if (stageNo == 1)
-        {
-            Debug.Log("Dialog Two");
-        }
-
     }
     public void switchToMainCam()
     {
