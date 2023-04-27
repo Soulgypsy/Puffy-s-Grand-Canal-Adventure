@@ -212,10 +212,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.4494977
-  m_Height: 4.01
+  m_Radius: 2.95
+  m_Height: 4.97
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.14949751}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4264243711191187317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 4264243711002842751}
   harpoonLockPos: {fileID: 4264243710905348222}
-  active: 0
 --- !u!1001 &4264243711008732424
 PrefabInstance:
   m_ObjectHideFlags: 0

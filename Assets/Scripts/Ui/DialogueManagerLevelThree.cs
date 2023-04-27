@@ -21,7 +21,6 @@ public class DialogueManagerLevelThree : MonoBehaviour
     public Lv3Manager l3Manager;
     public GameObject speedBoat;
 
-    // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
@@ -31,18 +30,9 @@ public class DialogueManagerLevelThree : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         box.SetActive(true);
-        //tint.SetActive(true);
-        //portraitPuffy.SetActive(true);
 
         l3Manager.CameraSwitch();
-        dialogueOn = true;
-        for (int i = 0; i < portrait.Length; i++)
-        {
-            if (portrait[i].portraitCheck == true)
-            {
-                //portrait[i].portrait.SetActive(true);
-            }
-        }
+        dialogueOn = true;       
         Debug.Log("Starting Conversation with " + dialogue.name);
 
         nameText.text = dialogue.name;
@@ -84,13 +74,6 @@ public class DialogueManagerLevelThree : MonoBehaviour
 
     public void EndDialogue()
     {
-        for (int i = 0; i < portrait.Length; i++)
-        {
-            //portrait[i].portrait.SetActive(false);
-        }
-        //dialogueOn = false;
-        //cameraMovement = true;
-
         l3Manager.exitDialog();
         speedBoat.GetComponent<RaceMovement>().enabled = true;
 

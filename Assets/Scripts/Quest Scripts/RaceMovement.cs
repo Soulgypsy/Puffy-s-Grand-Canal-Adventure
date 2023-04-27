@@ -23,8 +23,12 @@ public class RaceMovement : MonoBehaviour
     public bool hasWon;
     public bool hasFinished;
 
+    [Header("Camera")]
+    public Camera mainCam;
+
     private void Start()
     {
+        mainCam = Camera.main;
         navStart = false;
         speedBoatBody.SetActive(true);
         dialogueBoat.SetActive(false);
@@ -191,5 +195,6 @@ public class RaceMovement : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().enabled = true;
         transformPlayer.position = new Vector3(521, -16, -37);
         transformPlayer.eulerAngles = new Vector3(0, -132, 0);
+        mainCam.transform.position = new Vector3(536, -4, -18);
     }
 }
