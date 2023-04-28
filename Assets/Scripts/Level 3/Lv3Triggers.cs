@@ -11,10 +11,14 @@ public class Lv3Triggers : MonoBehaviour
     public bool isRaceTrigger;
     public bool islast;
     public bool isDialogTrigger;
+    public bool isEndTrigger;
 
     [Header("Race")]
     public GameObject nextTrigger;
     public RaceMovement raceCheck;
+
+    [Header("GameObjects")]
+    public GameObject endText;
 
     private void Start()
     {
@@ -43,6 +47,10 @@ public class Lv3Triggers : MonoBehaviour
             {
                 GetComponent<DialogueTriggerLevelThree>().TriggerDialogue();
                 gameObject.SetActive(false);
+            }
+            else if (isEndTrigger)
+            {
+                endText.SetActive(true);
             }
 
         }
