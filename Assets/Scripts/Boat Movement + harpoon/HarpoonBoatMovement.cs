@@ -31,13 +31,13 @@ public class HarpoonBoatMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (moving == true) //Moving towards target.
         {
             Vector3 target = new Vector3(harpoon.transform.position.x, transform.position.y , harpoon.transform.position.z);
             Vector3 direction = target - transform.position;
-            Vector3 force = (direction / 100) * pullSpeed;
+            Vector3 force = (direction / 100) * pullSpeed * Time.deltaTime;
 
             rb.AddForce(force , ForceMode.Impulse);
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxMoveSpeed);
