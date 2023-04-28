@@ -200,7 +200,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 0}
   harpoonLockPos: {fileID: 0}
-  active: 0
 --- !u!4 &13474626
 Transform:
   m_ObjectHideFlags: 0
@@ -214,7 +213,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55936868
 GameObject:
@@ -252,10 +251,14 @@ MonoBehaviour:
   boat: {fileID: 601115942}
   hooked: 0
   harpoon: {fileID: 0}
+  harpoonAim: {fileID: 0}
   lockPosition: {fileID: 0}
   locked: 0
   rotateSpeed: 0
   questScore: 0
+  collectDist: 0
+  manager: {fileID: 0}
+  ring: {fileID: 0}
 --- !u!54 &55936871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -286,7 +289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 1105599466}
   harpoonLockPos: {fileID: 1088743996}
-  active: 0
 --- !u!114 &55936873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +327,7 @@ RectTransform:
   - {fileID: 1964367635}
   - {fileID: 2113594729}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1178,7 +1180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 1394650161}
   harpoonLockPos: {fileID: 300354365}
-  active: 0
 --- !u!1 &300354364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,7 +2010,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 89283457}
   harpoonLockPos: {fileID: 1552681323}
-  active: 0
 --- !u!1 &483258858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,7 +2157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 2043873513}
   harpoonLockPos: {fileID: 270565795}
-  active: 0
 --- !u!1 &502468502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 2034880312}
   harpoonLockPos: {fileID: 1979027414}
-  active: 0
 --- !u!1 &597685558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,7 +2624,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601115941
 GameObject:
@@ -2668,7 +2666,7 @@ Transform:
   - {fileID: 1222563569}
   - {fileID: 267251837}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &601115944
 MonoBehaviour:
@@ -2682,8 +2680,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7054800832624eb6669bff603118f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   harpoon: {fileID: 0}
   speed: 10
+  pullSpeed: 0
+  maxMoveSpeed: 0
+  _Current: 0
   moving: 0
   rotateSpeed: 1
   cameraAim: {fileID: 1700540709}
@@ -2752,9 +2759,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questImage:
-  - {fileID: 444379075}
-  - {fileID: 444379075}
-  - {fileID: 444379075}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetPosition:
   - {fileID: 55936874}
   - {fileID: 788019743}
@@ -2765,10 +2772,17 @@ MonoBehaviour:
   - {fileID: 1906491605}
   cam: {fileID: 1222563568}
   offset: {x: 0, y: 2, z: 0}
+  transformPlayer: {fileID: 0}
   questObjects:
   - {fileID: 55936869}
   - {fileID: 788019742}
   - {fileID: 2112255608}
+  raceBoat: {fileID: 0}
+  followBoat: {fileID: 0}
+  collectBoat: {fileID: 0}
+  paintBoat: {fileID: 0}
+  finishQuest: {fileID: 0}
+  raceGoal: {fileID: 0}
 --- !u!114 &601115951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,6 +2800,8 @@ MonoBehaviour:
     sentences:
     - Aw, you beat me...
     - Alright, I'm good on my word.
+  portrait: {fileID: 0}
+  portraitCheck: 0
 --- !u!1 &619963368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,7 +3069,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &682305600
 GameObject:
@@ -3190,7 +3206,7 @@ Transform:
   - {fileID: 592251724}
   - {fileID: 500961109}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694660207 stripped
 GameObject:
@@ -3313,7 +3329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 899555348}
   harpoonLockPos: {fileID: 1587177382}
-  active: 0
 --- !u!1001 &753795260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3467,7 +3482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 150808964}
   harpoonLockPos: {fileID: 1225893967}
-  active: 0
 --- !u!54 &788019741
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3499,10 +3513,14 @@ MonoBehaviour:
   boat: {fileID: 601115942}
   hooked: 0
   harpoon: {fileID: 0}
+  harpoonAim: {fileID: 0}
   lockPosition: {fileID: 0}
   locked: 0
   rotateSpeed: 0
   questScore: 0
+  collectDist: 0
+  manager: {fileID: 0}
+  ring: {fileID: 0}
 --- !u!4 &788019743
 Transform:
   m_ObjectHideFlags: 0
@@ -3520,7 +3538,7 @@ Transform:
   - {fileID: 1350262167}
   - {fileID: 422477467}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!59 &788019744
 HingeJoint:
@@ -3954,7 +3972,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &929819505
 MonoBehaviour:
@@ -3972,6 +3990,8 @@ MonoBehaviour:
     name: Green Boat
     sentences:
     - Thank you, young Puffy! I'll help you once you've gathered everyone.
+  portrait: {fileID: 0}
+  portraitCheck: 0
 --- !u!1 &946328920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,7 +4188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 1680314242}
   harpoonLockPos: {fileID: 1211481801}
-  active: 0
 --- !u!1 &1019039755
 GameObject:
   m_ObjectHideFlags: 3
@@ -5028,7 +5047,7 @@ RectTransform:
   - {fileID: 946328923}
   - {fileID: 162117760}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5643,7 +5662,7 @@ Transform:
   - {fileID: 816918724}
   - {fileID: 1640665298}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1442176809 stripped
 Transform:
@@ -6144,7 +6163,13 @@ MonoBehaviour:
   transformPlayer: {fileID: 601115942}
   followAllowed: 0
   reachedPoint: 0
+  boatWaypointActivated: 0
+  isActive: 0
   interactImage: {fileID: 2072627409}
+  collectedCheck: {fileID: 0}
+  raceBoatCheck: {fileID: 0}
+  collectBoatCheck: {fileID: 0}
+  waypointMark: {fileID: 0}
   followButton: 101
 --- !u!54 &1554236854
 Rigidbody:
@@ -6239,7 +6264,7 @@ Transform:
   m_Children:
   - {fileID: 1855733876}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1554236859
 BoxCollider:
@@ -6270,6 +6295,8 @@ MonoBehaviour:
     name: Green Boat
     sentences:
     - Can you help me find my way? I got lost after the cavein...
+  portrait: {fileID: 0}
+  portraitCheck: 0
 --- !u!1 &1587177381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6695,17 +6722,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  DefaultTarget: {fileID: 267251837}
+  defaultTarget: {fileID: 0}
+  rayDistance: 0
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  currentTarget: {fileID: 0}
+  UiManager: {fileID: 0}
   harpoonPrefab: {fileID: 3016704377951521041, guid: e9e6919b15f5c6f4494cd446ddc54761, type: 3}
   currentHarpoon: {fileID: 0}
   spawnPoint: {fileID: 398179661}
   readyToFire: 1
+  harpoonOff: 0
+  harpoonMaxDist: 0
   launchSpeed: 50
   returnSpeed: 50
   hit: 0
   movement: {fileID: 601115944}
   collecionArea: {fileID: 331172010}
   Stored: 0
+  harpoonHit: {fileID: 0}
+  reelBack: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &1715914626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3225900492860146396, guid: 4920a63e8430b0b4ba6bae24c97cbff1, type: 3}
@@ -7132,7 +7170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 402303169}
   harpoonLockPos: {fileID: 483258859}
-  active: 0
 --- !u!1 &1906491604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7280,7 +7317,7 @@ Transform:
   - {fileID: 827785115}
   - {fileID: 252715901}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957189901
 GameObject:
@@ -7315,7 +7352,7 @@ Transform:
   - {fileID: 148181007}
   - {fileID: 1525284828}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1960256942
 GameObject:
@@ -8348,7 +8385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMarker: {fileID: 118084199}
   harpoonLockPos: {fileID: 1132008895}
-  active: 0
 --- !u!54 &2112255607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8380,10 +8416,14 @@ MonoBehaviour:
   boat: {fileID: 601115942}
   hooked: 0
   harpoon: {fileID: 0}
+  harpoonAim: {fileID: 0}
   lockPosition: {fileID: 0}
   locked: 0
   rotateSpeed: 0
   questScore: 0
+  collectDist: 0
+  manager: {fileID: 0}
+  ring: {fileID: 0}
 --- !u!4 &2112255609
 Transform:
   m_ObjectHideFlags: 0
@@ -8401,7 +8441,7 @@ Transform:
   - {fileID: 1960256943}
   - {fileID: 1442176809}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!59 &2112255610
 HingeJoint:
@@ -8634,7 +8674,7 @@ Transform:
   - {fileID: 5129479738935738789}
   - {fileID: 4628145085210073398}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &641780269258596737 stripped
 Transform:
@@ -9100,7 +9140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756904292992657832, guid: 90c344951f8aea44181b21b960a97024, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7756904292992657832, guid: 90c344951f8aea44181b21b960a97024, type: 3}
       propertyPath: m_AnchorMax.x
