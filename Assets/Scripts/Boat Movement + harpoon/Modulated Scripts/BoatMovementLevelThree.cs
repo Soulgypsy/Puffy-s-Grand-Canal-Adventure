@@ -115,7 +115,7 @@ public class BoatMovementLevelThree : MonoBehaviour
 
     void PauseMenu()
     {
-        if (Input.GetKeyDown("escape")) //&& triggeredDialogue.dialogueOn == false)
+        if (Input.GetKeyDown(KeyCode.P)) 
         {
             if (pauseMenu.activeSelf == true) //Unpause.
             {
